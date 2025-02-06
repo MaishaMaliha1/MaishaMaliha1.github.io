@@ -1,28 +1,28 @@
 /* Global Styles */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f8ff; /* Light blue background */
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa; /* Light gray background */
   margin: 0;
   padding: 0;
 }
 
-h1, p {
-  color: #333; /* Dark gray text */
+/* Header Section */
+header {
+  background-color: #343a40; /* Dark background for navbar */
 }
 
-/* Navigation Bar */
 .navbar {
-  background-color: #007BFF; /* Blue background */
-}
-
-.navbar .nav-link {
-  color: white !important;
-  font-weight: bold;
   padding: 15px;
 }
 
-.navbar .nav-link:hover {
-  background-color: #0056b3; /* Darker blue on hover */
+.navbar-nav .nav-link {
+  color: white !important;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.navbar-nav .nav-link:hover {
+  background-color: #007bff; /* Blue background on hover */
   border-radius: 5px;
 }
 
@@ -32,7 +32,7 @@ h1, p {
 
 /* Main Content */
 .container {
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 .row {
@@ -42,51 +42,62 @@ h1, p {
 }
 
 .col-md-4 img {
-  border-radius: 10px; /* Rounded corners for image */
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1); /* Soft shadow around image */
+  width: 100%;
 }
 
 .col-md-8 {
-  background-color: #fff; /* White background for content section */
-  padding: 20px;
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); /* Shadow around content */
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1); /* Shadow around the content */
 }
 
 .col-md-8 h1 {
-  color: #007BFF; /* Blue color for the heading */
+  color: #007bff; /* Blue color for heading */
+  font-size: 2rem;
 }
 
 .col-md-8 p {
-  color: #555; /* Lighter gray text */
+  color: #555; /* Light gray text */
   font-size: 1.2rem;
+  line-height: 1.6;
 }
 
 /* Footer */
 footer {
-  background-color: #343a40; /* Dark background for footer */
+  background-color: #343a40; /* Dark footer background */
   color: white;
-  padding: 20px;
+  padding: 15px;
   text-align: center;
-  margin-top: 40px;
-}
-
-/* Button Styles */
-.nav-button {
-  background-color: #28a745; /* Green button */
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  margin: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  border-radius: 5px;
-}
-
-.nav-button:hover {
-  background-color: #218838; /* Darker green on hover */
 }
 
 footer p {
   font-size: 1rem;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+  .navbar-nav {
+    text-align: center;
+  }
+
+  .row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .col-md-4, .col-md-8 {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .col-md-8 h1 {
+    font-size: 1.5rem;
+  }
+
+  .col-md-8 p {
+    font-size: 1rem;
+  }
 }
