@@ -1,40 +1,57 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Website</title>
+  <title>Maisha Maliha</title>
+
+  <!-- Bootstrap CSS CDN -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS (Optional) -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <div class="nav-bar">
-      <button class="nav-button">Home</button>
-      <button class="nav-button">About</button>
-      <button class="nav-button">Academics</button>
-      <button class="nav-button">Research</button>
-      <button class="nav-button">Student Life</button>
-      <button class="nav-button">Resources</button>
-      <button class="nav-button">News</button>
-      <button class="nav-button">People</button>
-      <button class="nav-button">Connect & Give</button>
-    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Academics</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Research</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Student Life</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Resources</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">News</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">People</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Connect & Give</a></li>
+        </ul>
+      </div>
+    </nav>
   </header>
 
-  <div class="main-content">
-    <div class="image-section">
-      <img src="citations.jpeg" alt="Sample Image">
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-md-4">
+        <img src="citations.jpeg" alt="Sample Image" class="img-fluid">
+      </div>
+      <div class="col-md-8">
+        <h1>Welcome to My Website</h1>
+        <p>Working....</p>
+      </div>
     </div>
-    <section>
-      <h1>Welcome to My Website</h1>
-      <p>Working..</p>
-    </section>
   </div>
 
-  <footer>
+  <footer class="bg-dark text-white text-center py-3">
     <p>© Developed By Maisha Maliha</p>
   </footer>
+
+  <!-- Bootstrap JS and jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
-
