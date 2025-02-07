@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CS Logo with Embedded Code</title>
+    <title>CS Logo with Properly Indented Code</title>
     <style>
         body {
             display: flex;
@@ -20,31 +20,31 @@
         /* CS Logo with Embedded Python Code */
         .logo-container {
             position: relative;
-            font-size: 300px; /* Big CS */
+            font-size: 300px; /* Large CS */
             font-weight: bold;
             text-transform: uppercase;
-            letter-spacing: -8px; /* Reduce spacing between letters */
+            letter-spacing: -5px; /* Reduce spacing between letters */
             background: #841617; /* Oklahoma Crimson */
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             display: flex;
-            transform: scaleX(1.02); /* Minimal width change */
+            transform: scaleX(1.02); /* Slightly wider but natural */
         }
 
-        /* Python Code Inside CS */
+        /* Properly Indented Python Code Inside CS */
         .code-overlay {
             position: absolute;
             font-family: 'Courier New', monospace;
-            font-size: 22px; /* Adjusted to fit inside CS */
-            line-height: 1.1;
-            color: white; /* White code for contrast */
-            text-align: center;
-            white-space: pre-wrap;
+            font-size: 20px; /* Smaller font for better fit */
+            line-height: 1.2;
+            color: white; /* White text for visibility */
+            text-align: left;
+            white-space: pre;
             width: 100%;
-            max-width: 90%;
+            max-width: 600px;
             pointer-events: none;
-            z-index: -1;
+            z-index: 1;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
@@ -56,7 +56,7 @@
     <!-- CS Logo -->
     <div class="logo-container">CS</div>
 
-    <!-- Python Code Properly Packed Inside CS -->
+    <!-- Properly Indented Python Code Inside CS -->
     <div class="code-overlay">
 year = 1969
 while True:
