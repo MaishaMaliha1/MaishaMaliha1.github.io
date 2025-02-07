@@ -7,6 +7,7 @@
     <style>
         body {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -15,6 +16,14 @@
             font-family: Arial, sans-serif;
             text-align: center;
             overflow: hidden;
+        }
+
+        /* University Name */
+        .university-name {
+            font-size: 32px; /* Large but smaller than CS */
+            font-weight: bold;
+            color: #841617; /* OU Crimson */
+            margin-bottom: -20px; /* Pull it closer to CS */
         }
 
         /* CS Logo */
@@ -48,6 +57,9 @@
     </style>
 </head>
 <body>
+
+    <!-- University Name -->
+    <div class="university-name">University of Oklahoma</div>
 
     <!-- CS Logo -->
     <div class="logo-container">CS</div>
