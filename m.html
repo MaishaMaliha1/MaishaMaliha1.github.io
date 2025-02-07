@@ -14,43 +14,51 @@
             background-color: #888888; /* Grey background */
             font-family: Arial, sans-serif;
             text-align: center;
+            position: relative;
         }
 
-        /* Container for the CS logo */
+        /* CS Logo styling */
         .logo-container {
             position: relative;
             font-size: 250px;
             font-weight: bold;
-            color: transparent;
-            background-image: linear-gradient(white, white);
-            background-clip: text;
-            -webkit-background-clip: text;
+            color: #841617; /* Oklahoma Crimson for CS */
             text-transform: uppercase;
             display: flex;
             gap: 30px;
         }
 
-        /* Background text inside the logo */
-        .logo-container::before {
-            content: "year = 1969\nwhile True:\n    print(f'CS is always the best! {year}')\n    year += 1";
+        /* Overlay Python Code */
+        .code-overlay {
             position: absolute;
             font-family: 'Courier New', monospace;
-            font-size: 28px;
+            font-size: 24px;
             line-height: 1.5;
-            color: #841617; /* Oklahoma Crimson */
-            white-space: pre-wrap;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: -1;
-            opacity: 1; /* Ensuring clear visibility inside letters */
+            color: white; /* White code text */
+            text-align: left;
+            white-space: pre;
+            z-index: 1;
+            pointer-events: none;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 600px;
         }
     </style>
 </head>
 <body>
 
-    <!-- CS Logo with Python Code Inside -->
+    <!-- CS Logo -->
     <div class="logo-container">CS</div>
+
+    <!-- Python Code Overlay -->
+    <div class="code-overlay">
+year = 1969
+while True:
+    print(f"CS is always the best! {year}")
+    year += 1
+    </div>
 
 </body>
 </html>
