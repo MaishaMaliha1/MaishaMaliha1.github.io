@@ -41,48 +41,42 @@
             left: 50%;
             transform: translateX(-50%);
         }
-        #ou-message {
-            margin-top: 20px;
-            font-size: 1.5rem;
-            color: #841617;
-            font-weight: bold;
-        }
-        #python-code {
+        .python-code {
             font-family: 'Courier New', monospace;
-            color: #333;
             font-size: 1.2rem;
-            white-space: pre-wrap; /* Keeps the code formatting */
-            word-wrap: break-word;
-            margin-top: 20px;
+            white-space: pre-wrap;
+            color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: left;
+            line-height: 1.5;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 8px;
         }
     </style>
 </head>
 <body>
 
-    <div class="logo">
+    <div class="logo" style="position: relative;">
         C
         <span class="highlight">S</span>
-    </div>
-
-    <p id="ou-message">OU CS is always the best! (1969)</p>
-
-    <div id="python-code">
-        # Infinite loop since 1969<br>
-        <code>year = 1969</code><br><br>
-        <code>while True:</code><br>
-        <code>&nbsp;&nbsp;&nbsp;&nbsp;print(f"OU CS is always the best! {year}")</code><br>
-        <code>&nbsp;&nbsp;&nbsp;&nbsp;year += 1  # Incrementing the year</code>
+        <div class="python-code">
+            year = 1969<br>
+            while True:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;print(f"OU CS is always the best! {year}")<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;year += 1
+        </div>
     </div>
 
     <script>
-        let message = document.getElementById("ou-message");
         let year = 1969;
-
-        // Infinite loop that prints the message and increments the year
         setInterval(() => {
-            message.innerText = `OU CS is always the best! (${year})`;
-            year++;  // Increment the year
-        }, 1000); // Updates every second
+            console.log(`OU CS is always the best! (${year})`);
+            year++;
+        }, 1000);
     </script>
 
 </body>
