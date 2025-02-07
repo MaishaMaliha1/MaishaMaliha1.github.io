@@ -3,19 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OU CS Logo</title>
+    <title>OU CS Logo with Python Code</title>
     <style>
-        @font-face {
-            font-family: 'Mongoose';
-            src: url('path-to-mongoose-font.woff2') format('woff2');
-        }
-        @font-face {
-            font-family: 'Arboria';
-            src: url('path-to-arboria-font.woff2') format('woff2');
-        }
         body {
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -24,60 +15,74 @@
             text-align: center;
             font-family: Arial, sans-serif;
         }
+        
         .logo {
-            font-family: 'Mongoose', sans-serif;
-            font-size: 10rem;
+            display: flex;
+            position: relative;
+            font-size: 200px; /* Making CS much bigger */
             font-weight: bold;
             color: #841617; /* Oklahoma Crimson */
+            line-height: 1;
+            letter-spacing: -10px;
+        }
+        
+        .letter {
             position: relative;
-            display: inline-block;
+            width: 200px;
+            height: 250px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-        .logo .highlight {
-            font-family: 'Arboria', sans-serif;
-            font-weight: black;
-            color: #000000; /* Black */
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-        }
+        
         .python-code {
-            font-family: 'Courier New', monospace;
-            font-size: 1.2rem;
-            white-space: pre-wrap;
-            color: white;
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            font-family: 'Courier New', monospace;
+            font-size: 18px;
+            white-space: pre;
+            color: white;
             text-align: left;
-            line-height: 1.5;
             padding: 10px;
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: rgba(0, 0, 0, 0.7); /* Dark background for readability */
             border-radius: 8px;
+            width: 100px;
+        }
+
+        /* Positioning the code inside C */
+        .c .python-code {
+            left: 20px;
+            top: 20px;
+        }
+
+        /* Positioning the code inside S */
+        .s .python-code {
+            right: 20px;
+            bottom: 20px;
         }
     </style>
 </head>
 <body>
 
-    <div class="logo" style="position: relative;">
-        C
-        <span class="highlight">S</span>
-        <div class="python-code">
-            year = 1969<br>
-            while True:<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;print(f"OU CS is always the best! {year}")<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;year += 1
+    <div class="logo">
+        <div class="letter c">
+            C
+            <div class="python-code">
+                year = 1969<br>
+                while True:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;print(f"OU CS is always the best! {year}")<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;year += 1
+            </div>
+        </div>
+        <div class="letter s">
+            S
+            <div class="python-code">
+                year = 1969<br>
+                while True:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;print(f"OU CS is always the best! {year}")<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;year += 1
+            </div>
         </div>
     </div>
-
-    <script>
-        let year = 1969;
-        setInterval(() => {
-            console.log(`OU CS is always the best! (${year})`);
-            year++;
-        }, 1000);
-    </script>
 
 </body>
 </html>
