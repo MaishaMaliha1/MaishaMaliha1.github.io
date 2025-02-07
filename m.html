@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stylish OU CS Logo with Embedded Code</title>
-    <!-- Google Fonts for Stylish Effect -->
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Arvo:ital@1&family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <!-- Google Fonts for Custom Styling -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Arvo:ital@1&family=Source+Code+Pro&display=swap" rel="stylesheet">
     <style>
         body {
             display: flex;
@@ -20,7 +20,7 @@
             overflow: hidden;
         }
 
-        /* Outer structure (border box) */
+        /* Outer Structure (Bounding Box) */
         .logo-box {
             position: relative;
             border: 8px solid #4B4B4B; /* Neutral gray border */
@@ -35,7 +35,7 @@
 
         /* University Name */
         .university-name {
-            font-family: 'Arvo', serif; /* Elegant, italic style */
+            font-family: 'Arvo', serif; /* Elegant italic style */
             font-style: italic;
             font-size: 32px;
             font-weight: bold;
@@ -44,33 +44,35 @@
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
         }
 
-        /* CS Logo (Stylish) */
+        /* Redesigned CS Logo */
         .logo-container {
             position: relative;
-            font-size: 280px; /* Large CS */
+            font-size: 200px; /* Adjusted for balance */
             font-weight: bold;
             text-transform: uppercase;
-            letter-spacing: -5px; /* Compact letters */
-            font-family: 'Anton', sans-serif; /* Modern, wide font */
-            background: linear-gradient(135deg, #841617, #a83232); /* Crimson gradient */
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+            letter-spacing: 5px; /* Stylish spacing */
+            font-family: 'Orbitron', sans-serif; /* Modern, futuristic font */
+            color: #841617; /* OU Crimson */
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5); /* 3D effect */
             display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 6px solid white; /* Outlined effect */
+            padding: 20px 40px;
+            border-radius: 15px; /* Smooth rounded edges */
         }
 
         /* Python Code Inside CS */
         .code-overlay {
             position: absolute;
             font-family: 'Source Code Pro', monospace; /* Code font */
-            font-size: 18px; /* Adjusted for readability */
-            line-height: 1.3; /* Proper spacing */
-            color: white; /* White text for contrast */
+            font-size: 16px; /* Smaller font to fit well */
+            line-height: 1.3;
+            color: white;
             text-align: left;
             white-space: pre;
-            width: 80%;
-            max-width: 420px; /* Keep text compact inside CS */
+            width: 90%;
+            max-width: 450px;
             pointer-events: none;
             z-index: 1;
             top: 50%;
@@ -87,8 +89,8 @@
         <!-- University Name -->
         <div class="university-name">University of Oklahoma</div>
 
-        <!-- Stylish CS Logo -->
-        <div class="logo-container">CS</div>
+        <!-- Stylish Redesigned CS Logo -->
+        <div class="logo-container">C S</div>
 
         <!-- Python Code Inside CS -->
         <div class="code-overlay">
