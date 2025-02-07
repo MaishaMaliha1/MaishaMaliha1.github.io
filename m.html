@@ -19,16 +19,18 @@
         .logo {
             display: flex;
             position: relative;
-            font-size: 300px; /* Make CS much bigger */
+            font-size: 400px; /* Increase CS size */
             font-weight: bold;
             color: #841617; /* Oklahoma Crimson */
             line-height: 1;
-            letter-spacing: -20px; /* Reduce space between C and S */
+            letter-spacing: -40px; /* Remove gap between C and S */
         }
 
         .letter {
             position: relative;
             display: flex;
+            width: 250px; /* Make C and S wider */
+            height: 350px; /* Increase height */
             justify-content: center;
             align-items: center;
         }
@@ -36,26 +38,27 @@
         .python-code {
             position: absolute;
             font-family: 'Courier New', monospace;
-            font-size: 24px; /* Increase font size for better visibility */
+            font-size: 32px; /* Bigger code font */
             white-space: pre;
             color: white;
             text-align: left;
-            padding: 15px;
+            padding: 20px;
             background-color: rgba(0, 0, 0, 0.7); /* Dark background for readability */
-            border-radius: 8px;
-            width: 180px; /* Make the code box wider */
+            border-radius: 10px;
+            width: 230px; /* Adjust to fit inside wider letters */
+            height: 200px; /* Adjust height */
         }
 
         /* Positioning the code inside C */
         .c .python-code {
-            left: 15%;
-            top: 20%;
+            left: 10%;
+            top: 15%;
         }
 
         /* Positioning the code inside S */
         .s .python-code {
-            right: 15%;
-            bottom: 20%;
+            right: 10%;
+            bottom: 15%;
         }
     </style>
 </head>
