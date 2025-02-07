@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OU CS Logo with Embedded Code</title>
+    <!-- Google Fonts for Demonstration -->
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:ital@1&family=Source+Code+Pro&display=swap" rel="stylesheet">
     <style>
         body {
             display: flex;
@@ -20,7 +22,9 @@
 
         /* University Name */
         .university-name {
-            font-size: 32px; /* Large but smaller than CS */
+            font-family: 'Arvo', serif; /* Substitute for Freight */
+            font-style: italic;
+            font-size: 32px;
             font-weight: bold;
             color: #841617; /* OU Crimson */
             margin-bottom: -20px; /* Pull it closer to CS */
@@ -37,10 +41,10 @@
             display: flex;
         }
 
-        /* Properly Indented Python Code Inside CS */
+        /* Python Code Inside CS */
         .code-overlay {
             position: absolute;
-            font-family: 'Courier New', monospace;
+            font-family: 'Source Code Pro', monospace; /* Substitute for Arboria */
             font-size: 18px; /* Adjusted for readability */
             line-height: 1.3; /* Proper spacing */
             color: white; /* White text for visibility */
@@ -64,7 +68,7 @@
     <!-- CS Logo -->
     <div class="logo-container">CS</div>
 
-    <!-- Fully Indented Python Code Inside CS -->
+    <!-- Python Code Inside CS -->
     <div class="code-overlay">
 year = 1969
 while True:
