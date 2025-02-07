@@ -11,83 +11,67 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #ffffff;
+            background-color: #888888; /* Grey background */
             text-align: center;
             font-family: Arial, sans-serif;
+            position: relative;
+            overflow: hidden;
         }
 
+        /* Python code in background */
+        .background-text {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            font-family: 'Courier New', monospace;
+            font-size: 28px; /* Adjust size for visibility */
+            color: white; /* White text for contrast */
+            opacity: 0.2; /* Light text effect */
+            text-align: left;
+            padding: 50px;
+            line-height: 1.5;
+            white-space: pre-wrap;
+            overflow: hidden;
+        }
+
+        /* Huge C and S in the center */
         .logo {
-            display: flex;
-            position: relative;
-            font-size: 450px; /* Very large CS */
+            font-size: 700px; /* Extremely large */
             font-weight: bold;
             color: #841617; /* Oklahoma Crimson */
-            line-height: 1;
-            letter-spacing: -50px; /* Remove gap between C and S */
+            display: flex;
+            letter-spacing: -30px;
+            position: relative;
+            z-index: 1; /* Ensure it's above the background */
         }
 
         .letter {
-            position: relative;
-            width: 350px; /* Wider letters */
-            height: 450px;
+            width: 500px;
+            height: 700px;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        .text-inside {
-            position: absolute;
-            font-family: 'Courier New', monospace;
-            font-size: 36px; /* Large text */
-            white-space: pre-wrap;
-            color: white; /* White text inside crimson */
-            text-align: center;
-            width: 100%;
-        }
-
-        /* Positioning the code inside C */
-        .c .text-inside {
-            top: 10%;
-            left: 5%;
-            text-align: left;
-        }
-
-        /* Positioning the University text inside S */
-        .s .text-inside {
-            bottom: 20%;
-            right: 5%;
-            font-size: 32px; /* Slightly smaller for text fitting */
-        }
-
-        /* OU Logo inside S */
-        .ou-logo {
-            position: absolute;
-            bottom: 5%;
-            right: 20%;
-            width: 100px; /* Adjust logo size */
-        }
     </style>
 </head>
 <body>
 
-    <div class="logo">
-        <div class="letter c">
-            C
-            <div class="text-inside">
+    <!-- Background Python Code -->
+    <div class="background-text">
 year = 1969
 while True:
     print(f"OU CS is always the best! {year}")
     year += 1
-            </div>
-        </div>
-        <div class="letter s">
-            S
-            <div class="text-inside">
+
 University of Oklahoma
 School of Computer Science
-            </div>
-            <img class="ou-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Oklahoma_Sooners_logo.svg/800px-Oklahoma_Sooners_logo.svg.png" alt="OU Logo">
-        </div>
+    </div>
+
+    <!-- CS Logo in Center -->
+    <div class="logo">
+        <div class="letter">C</div>
+        <div class="letter">S</div>
     </div>
 
 </body>
