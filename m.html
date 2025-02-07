@@ -17,46 +17,40 @@
             overflow: hidden;
         }
 
-        /* Container for the CS logo */
+        /* CS Logo with Embedded Python Code */
         .logo-container {
             position: relative;
-            font-size: 400px; /* Bigger and wider */
+            font-size: 400px; /* Huge CS */
             font-weight: bold;
-            color: #841617; /* Oklahoma Crimson */
             text-transform: uppercase;
-            letter-spacing: 0px; /* Remove space between C and S */
+            letter-spacing: -10px; /* No gap between C and S */
+            background: #841617; /* Oklahoma Crimson */
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
             display: flex;
         }
 
-        /* Code inside the CS */
-        .code-overlay {
+        /* Python code fills the letters */
+        .logo-container::before {
+            content: "year = 1969\nwhile True:\n    print(f'CS is always the best! {year}')\n    year += 1";
             position: absolute;
             font-family: 'Courier New', monospace;
-            font-size: 35px;
+            font-size: 40px; /* Adjust for visibility */
             line-height: 1.2;
-            color: white; /* White code */
-            text-align: center;
-            white-space: pre;
-            z-index: 1;
+            color: white;
+            white-space: pre-wrap;
             width: 100%;
-            max-width: 600px;
-            pointer-events: none;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
         }
-
     </style>
 </head>
 <body>
 
-    <!-- CS Logo -->
+    <!-- CS Logo with Python Code Inside -->
     <div class="logo-container">CS</div>
-
-    <!-- Python Code Inside the CS -->
-    <div class="code-overlay">
-year = 1969
-while True:
-    print(f"CS is always the best! {year}")
-    year += 1
-    </div>
 
 </body>
 </html>
