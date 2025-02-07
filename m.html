@@ -19,18 +19,18 @@
         .logo {
             display: flex;
             position: relative;
-            font-size: 400px; /* Increase CS size */
+            font-size: 450px; /* Extremely large CS */
             font-weight: bold;
             color: #841617; /* Oklahoma Crimson */
             line-height: 1;
-            letter-spacing: -40px; /* Remove gap between C and S */
+            letter-spacing: -50px; /* Remove gap between C and S */
         }
 
         .letter {
             position: relative;
+            width: 300px; /* Wider C and S */
+            height: 400px;
             display: flex;
-            width: 250px; /* Make C and S wider */
-            height: 350px; /* Increase height */
             justify-content: center;
             align-items: center;
         }
@@ -38,27 +38,22 @@
         .python-code {
             position: absolute;
             font-family: 'Courier New', monospace;
-            font-size: 32px; /* Bigger code font */
+            font-size: 40px; /* Large Python code */
             white-space: pre;
-            color: white;
-            text-align: left;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.7); /* Dark background for readability */
-            border-radius: 10px;
-            width: 230px; /* Adjust to fit inside wider letters */
-            height: 200px; /* Adjust height */
+            color: white; /* White text inside crimson letters */
+            text-align: center;
         }
 
         /* Positioning the code inside C */
         .c .python-code {
-            left: 10%;
-            top: 15%;
+            top: 10%;
+            left: 5%;
         }
 
         /* Positioning the code inside S */
         .s .python-code {
-            right: 10%;
-            bottom: 15%;
+            bottom: 10%;
+            right: 5%;
         }
     </style>
 </head>
@@ -68,19 +63,19 @@
         <div class="letter c">
             C
             <div class="python-code">
-                year = 1969<br>
-                while True:<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;print(f"OU CS is always the best! {year}")<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;year += 1
+year = 1969
+while True:
+    print(f"OU CS is always the best! {year}")
+    year += 1
             </div>
         </div>
         <div class="letter s">
             S
             <div class="python-code">
-                year = 1969<br>
-                while True:<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;print(f"OU CS is always the best! {year}")<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;year += 1
+year = 1969
+while True:
+    print(f"OU CS is always the best! {year}")
+    year += 1
             </div>
         </div>
     </div>
