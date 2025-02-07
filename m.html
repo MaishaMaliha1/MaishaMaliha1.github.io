@@ -1,9 +1,89 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>
-    
-  </title>
-  <p>Welcome</p>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OU CS Logo</title>
+    <style>
+        @font-face {
+            font-family: 'Mongoose';
+            src: url('path-to-mongoose-font.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'Arboria';
+            src: url('path-to-arboria-font.woff2') format('woff2');
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ffffff;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .logo {
+            font-family: 'Mongoose', sans-serif;
+            font-size: 10rem;
+            font-weight: bold;
+            color: #841617; /* Oklahoma Crimson */
+            position: relative;
+            display: inline-block;
+        }
+        .logo .highlight {
+            font-family: 'Arboria', sans-serif;
+            font-weight: black;
+            color: #000000; /* Black */
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        #ou-message {
+            margin-top: 20px;
+            font-size: 1.5rem;
+            color: #841617;
+            font-weight: bold;
+        }
+        #python-code {
+            font-family: 'Courier New', monospace;
+            color: #333;
+            font-size: 1.2rem;
+            white-space: pre-wrap; /* Keeps the code formatting */
+            word-wrap: break-word;
+            margin-top: 20px;
+        }
+    </style>
 </head>
-  
+<body>
+
+    <div class="logo">
+        C
+        <span class="highlight">S</span>
+    </div>
+
+    <p id="ou-message">OU CS is always the best! (1969)</p>
+
+    <div id="python-code">
+        # Infinite loop since 1969<br>
+        <code>year = 1969</code><br><br>
+        <code>while True:</code><br>
+        <code>&nbsp;&nbsp;&nbsp;&nbsp;print(f"OU CS is always the best! {year}")</code><br>
+        <code>&nbsp;&nbsp;&nbsp;&nbsp;year += 1  # Incrementing the year</code>
+    </div>
+
+    <script>
+        let message = document.getElementById("ou-message");
+        let year = 1969;
+
+        // Infinite loop that prints the message and increments the year
+        setInterval(() => {
+            message.innerText = `OU CS is always the best! (${year})`;
+            year++;  // Increment the year
+        }, 1000); // Updates every second
+    </script>
+
+</body>
 </html>
