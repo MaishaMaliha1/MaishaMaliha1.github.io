@@ -15,49 +15,47 @@
             text-align: center;
             font-family: Arial, sans-serif;
         }
-        
+
         .logo {
             display: flex;
             position: relative;
-            font-size: 200px; /* Making CS much bigger */
+            font-size: 300px; /* Make CS much bigger */
             font-weight: bold;
             color: #841617; /* Oklahoma Crimson */
             line-height: 1;
-            letter-spacing: -10px;
+            letter-spacing: -20px; /* Reduce space between C and S */
         }
-        
+
         .letter {
             position: relative;
-            width: 200px;
-            height: 250px;
             display: flex;
             justify-content: center;
             align-items: center;
         }
-        
+
         .python-code {
             position: absolute;
             font-family: 'Courier New', monospace;
-            font-size: 18px;
+            font-size: 24px; /* Increase font size for better visibility */
             white-space: pre;
             color: white;
             text-align: left;
-            padding: 10px;
+            padding: 15px;
             background-color: rgba(0, 0, 0, 0.7); /* Dark background for readability */
             border-radius: 8px;
-            width: 100px;
+            width: 180px; /* Make the code box wider */
         }
 
         /* Positioning the code inside C */
         .c .python-code {
-            left: 20px;
-            top: 20px;
+            left: 15%;
+            top: 20%;
         }
 
         /* Positioning the code inside S */
         .s .python-code {
-            right: 20px;
-            bottom: 20px;
+            right: 15%;
+            bottom: 20%;
         }
     </style>
 </head>
