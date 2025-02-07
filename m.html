@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CS Logo with Correctly Indented Code</title>
+    <title>OU CS Logo with Embedded Code</title>
     <style>
         body {
             display: flex;
@@ -20,25 +20,25 @@
         /* CS Logo */
         .logo-container {
             position: relative;
-            font-size: 300px; /* Large CS */
+            font-size: 280px; /* Large CS */
             font-weight: bold;
             text-transform: uppercase;
-            letter-spacing: -5px; /* Compact letters */
-            color: #841617; /* Oklahoma Crimson */
+            letter-spacing: -8px; /* Compact letters */
+            color: #841617; /* OU Crimson */
             display: flex;
         }
 
-        /* Indented Python Code Inside CS */
+        /* Properly Indented Python Code Inside CS */
         .code-overlay {
             position: absolute;
             font-family: 'Courier New', monospace;
-            font-size: 18px; /* Smaller font for better fit */
-            line-height: 1.3; /* Proper line spacing */
-            color: white; /* White text for contrast */
+            font-size: 18px; /* Adjusted for readability */
+            line-height: 1.3; /* Proper spacing */
+            color: white; /* White text for visibility */
             text-align: left;
             white-space: pre;
             width: 80%;
-            max-width: 400px; /* Compact text to fit inside CS */
+            max-width: 420px; /* Keep text compact inside CS */
             pointer-events: none;
             z-index: 1;
             top: 50%;
@@ -52,12 +52,12 @@
     <!-- CS Logo -->
     <div class="logo-container">CS</div>
 
-    <!-- Properly Indented Python Code Inside CS -->
+    <!-- Fully Indented Python Code Inside CS -->
     <div class="code-overlay">
 year = 1969
 while True:
-  print(f"CS is always the best! {year}")
-  year += 1
+    print(f"CS is always the best! {year}")
+    year += 1
     </div>
 
 </body>
