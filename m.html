@@ -12,67 +12,46 @@
             height: 100vh;
             margin: 0;
             background-color: #888888; /* Grey background */
-            text-align: center;
             font-family: Arial, sans-serif;
-            position: relative;
-            overflow: hidden;
+            text-align: center;
         }
 
-        /* Python code in background */
-        .background-text {
+        /* Container for the logo */
+        .logo-container {
+            position: relative;
+            font-size: 250px;
+            font-weight: bold;
+            color: transparent;
+            background-image: linear-gradient(white, white);
+            background-clip: text;
+            -webkit-background-clip: text;
+            text-transform: uppercase;
+            display: flex;
+            gap: 30px;
+        }
+
+        /* Background text inside the logo */
+        .logo-container::before {
+            content: "year = 1969\nwhile True:\n    print(f'OU CS is always the best! {year}')\n    year += 1\n\nUniversity of Oklahoma\nSchool of Computer Science";
             position: absolute;
+            font-family: 'Courier New', monospace;
+            font-size: 28px;
+            line-height: 1.5;
+            color: #841617; /* Oklahoma Crimson */
+            white-space: pre-wrap;
             width: 100%;
             height: 100%;
-            font-family: 'Courier New', monospace;
-            font-size: 28px; /* Adjust size for visibility */
-            color: white; /* White text for contrast */
-            opacity: 0.2; /* Light text effect */
-            text-align: left;
-            padding: 50px;
-            line-height: 1.5;
-            white-space: pre-wrap;
             overflow: hidden;
+            z-index: -1;
+            opacity: 1; /* Ensuring clear visibility inside letters */
         }
-
-        /* Huge C and S in the center */
-        .logo {
-            font-size: 700px; /* Extremely large */
-            font-weight: bold;
-            color: #841617; /* Oklahoma Crimson */
-            display: flex;
-            letter-spacing: -30px;
-            position: relative;
-            z-index: 1; /* Ensure it's above the background */
-        }
-
-        .letter {
-            width: 500px;
-            height: 700px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
     </style>
 </head>
 <body>
 
-    <!-- Background Python Code -->
-    <div class="background-text">
-year = 1969
-while True:
-    print(f"OU CS is always the best! {year}")
-    year += 1
-
-University of Oklahoma
-School of Computer Science
-    </div>
-
-    <!-- CS Logo in Center -->
-    <div class="logo">
-        <div class="letter">C</div>
-        <div class="letter">S</div>
-    </div>
+    <!-- CS Logo with Python Code Inside -->
+    <div class="logo-container">CS</div>
 
 </body>
 </html>
+
