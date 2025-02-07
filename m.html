@@ -23,39 +23,46 @@
             font-size: 300px; /* Big CS */
             font-weight: bold;
             text-transform: uppercase;
-            letter-spacing: -5px; /* Close letters */
+            letter-spacing: -8px; /* Reduce spacing between letters */
             background: #841617; /* Oklahoma Crimson */
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             display: flex;
-            transform: scaleX(1.05); /* Slightly wider but mostly natural */
+            transform: scaleX(1.02); /* Minimal width change */
         }
 
-        /* Python code fills the letters */
-        .logo-container::before {
-            content: "year = 1969\nwhile True:\n    print(f'CS is always the best! {year}')\n    year += 1";
+        /* Python Code Inside CS */
+        .code-overlay {
             position: absolute;
             font-family: 'Courier New', monospace;
-            font-size: 24px; /* Adjusted for better visibility */
-            line-height: 1.2;
-            color: white;
+            font-size: 22px; /* Adjusted to fit inside CS */
+            line-height: 1.1;
+            color: white; /* White code for contrast */
+            text-align: center;
             white-space: pre-wrap;
             width: 100%;
-            height: 100%;
-            overflow: hidden;
+            max-width: 90%;
+            pointer-events: none;
             z-index: -1;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
     </style>
 </head>
 <body>
 
-    <!-- CS Logo with Python Code Inside -->
+    <!-- CS Logo -->
     <div class="logo-container">CS</div>
+
+    <!-- Python Code Properly Packed Inside CS -->
+    <div class="code-overlay">
+year = 1969
+while True:
+    print(f"CS is always the best! {year}")
+    year += 1
+    </div>
 
 </body>
 </html>
