@@ -20,28 +20,41 @@
         /* CS Logo Container */
         .logo-container {
             position: relative;
-            font-size: 400px; /* Large CS */
+            font-size: 350px; /* Large CS */
             font-weight: bold;
             color: #841617; /* Oklahoma Crimson */
             text-transform: uppercase;
-            letter-spacing: -10px; /* Reduce spacing */
+            letter-spacing: -5px; /* Slightly compact */
             display: flex;
-            transform: scaleX(3); /* Adjusted width: 3x wider */
+            transform: scaleX(1.5); /* Slightly wider */
         }
 
-        /* Code inside the CS */
-        .code-overlay {
+        /* Code inside "C" */
+        .code-c {
             position: absolute;
+            top: 50%;
+            left: 20%;
+            transform: translate(-50%, -50%);
             font-family: 'Courier New', monospace;
-            font-size: 35px;
-            line-height: 1.2;
-            color: white; /* White code */
-            text-align: center;
+            font-size: 28px;
+            line-height: 1.4;
+            color: white;
             white-space: pre;
-            z-index: 1;
-            width: 100%;
-            max-width: 800px;
-            pointer-events: none;
+            text-align: left;
+        }
+
+        /* Code inside "S" */
+        .code-s {
+            position: absolute;
+            top: 50%;
+            right: 10%;
+            transform: translate(50%, -50%);
+            font-family: 'Courier New', monospace;
+            font-size: 28px;
+            line-height: 1.4;
+            color: white;
+            white-space: pre;
+            text-align: left;
         }
 
     </style>
@@ -51,11 +64,16 @@
     <!-- CS Logo -->
     <div class="logo-container">CS</div>
 
-    <!-- Python Code Inside the CS -->
-    <div class="code-overlay">
+    <!-- Python Code Inside "C" -->
+    <div class="code-c">
 year = 1969
 while True:
-    print(f"CS is always the best! {year}")
+    print(
+    </div>
+
+    <!-- Python Code Inside "S" -->
+    <div class="code-s">
+f"CS is always the best! {year}")
     year += 1
     </div>
 
