@@ -20,6 +20,17 @@
             overflow: hidden;
         }
 
+        /* Outer structure (border box) */
+        .logo-box {
+            position: relative;
+            border: 8px solid #841617; /* Thick crimson border */
+            padding: 30px 60px;
+            border-radius: 20px; /* Rounded corners */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
         /* University Name */
         .university-name {
             font-family: 'Arvo', serif; /* Substitute for Freight */
@@ -27,7 +38,7 @@
             font-size: 32px;
             font-weight: bold;
             color: #841617; /* OU Crimson */
-            margin-bottom: -20px; /* Pull it closer to CS */
+            margin-bottom: 10px;
         }
 
         /* CS Logo */
@@ -62,18 +73,21 @@
 </head>
 <body>
 
-    <!-- University Name -->
-    <div class="university-name">University of Oklahoma</div>
+    <!-- Outer Bounded Structure -->
+    <div class="logo-box">
+        <!-- University Name -->
+        <div class="university-name">University of Oklahoma</div>
 
-    <!-- CS Logo -->
-    <div class="logo-container">CS</div>
+        <!-- CS Logo -->
+        <div class="logo-container">CS</div>
 
-    <!-- Python Code Inside CS -->
-    <div class="code-overlay">
+        <!-- Python Code Inside CS -->
+        <div class="code-overlay">
 year = 1969
 while True:
     print(f"CS is always the best! {year}")
     year += 1
+        </div>
     </div>
 
 </body>
