@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CS Logo with Embedded Code</title>
+    <title>CS Logo with Indented Code</title>
     <style>
         body {
             display: flex;
@@ -28,20 +28,20 @@
             display: flex;
         }
 
-        /* Python Code Inside CS */
+        /* Indented Python Code Inside CS */
         .code-overlay {
             position: absolute;
             font-family: 'Courier New', monospace;
-            font-size: 18px; /* Smaller font for better fit */
-            line-height: 1.2; /* Proper spacing */
+            font-size: 18px; /* Smaller font to fit */
+            line-height: 1.3; /* Proper spacing */
             color: white; /* White code for contrast */
-            text-align: center;
+            text-align: left;
             white-space: pre;
             width: 80%;
-            max-width: 400px; /* Keep text compact inside CS */
+            max-width: 400px; /* Compact size */
             pointer-events: none;
             z-index: 1;
-            top: 53%; /* Move down slightly to center */
+            top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
         }
@@ -52,7 +52,7 @@
     <!-- CS Logo -->
     <div class="logo-container">CS</div>
 
-    <!-- Fully Embedded Python Code Inside CS -->
+    <!-- Indented Python Code Inside CS -->
     <div class="code-overlay">
 year = 1969
 while True:
