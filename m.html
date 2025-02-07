@@ -20,23 +20,23 @@
         /* CS Logo Container */
         .logo-container {
             position: relative;
-            font-size: 350px; /* Large CS */
+            font-size: 300px; /* Large CS */
             font-weight: bold;
             color: #841617; /* Oklahoma Crimson */
             text-transform: uppercase;
-            letter-spacing: -5px; /* Slightly compact */
+            letter-spacing: 0px; /* No extra space between letters */
             display: flex;
-            transform: scaleX(1.5); /* Slightly wider */
+            transform: scaleX(1.1); /* Slightly wider */
         }
 
         /* Code inside "C" */
         .code-c {
             position: absolute;
             top: 50%;
-            left: 20%;
+            left: 10%;
             transform: translate(-50%, -50%);
             font-family: 'Courier New', monospace;
-            font-size: 28px;
+            font-size: 26px;
             line-height: 1.4;
             color: white;
             white-space: pre;
@@ -47,10 +47,10 @@
         .code-s {
             position: absolute;
             top: 50%;
-            right: 10%;
+            right: 5%;
             transform: translate(50%, -50%);
             font-family: 'Courier New', monospace;
-            font-size: 28px;
+            font-size: 26px;
             line-height: 1.4;
             color: white;
             white-space: pre;
@@ -68,12 +68,11 @@
     <div class="code-c">
 year = 1969
 while True:
-    print(
     </div>
 
     <!-- Python Code Inside "S" -->
     <div class="code-s">
-f"CS is always the best! {year}")
+print(f"CS is always the best! {year}")
     year += 1
     </div>
 
