@@ -5,8 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Futuristic OU CS Logo</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Arvo:ital@1&family=Source+Code+Pro&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script> <!-- HTML2Canvas Library -->
     <style>
+        :root {
+            --oklahoma-crimson: #9E1B32; /* Oklahoma Crimson */
+            --black: #000000;
+            --white: #FFFFFF;
+            --gray: #888888;
+        }
+
         body {
             display: flex;
             flex-direction: column;
@@ -14,11 +20,12 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #111;
+            background-color: var(--black); /* Black background */
             font-family: Arial, sans-serif;
             text-align: center;
             overflow: hidden;
         }
+
         .logo-box {
             position: relative;
             padding: 50px 90px;
@@ -36,9 +43,9 @@
             font-style: italic;
             font-size: 34px;
             font-weight: bold;
-            color: #ff5555;
+            color: var(--oklahoma-crimson); /* Oklahoma Crimson */
             margin-bottom: 10px;
-            text-shadow: 0 0 10px #ff5555, 0 0 20px #ff2222;
+            text-shadow: 0 0 10px var(--oklahoma-crimson), 0 0 20px #ff2222;
         }
 
         .logo-container {
@@ -48,7 +55,7 @@
             text-transform: uppercase;
             letter-spacing: 10px;
             font-family: 'Orbitron', sans-serif;
-            background: linear-gradient(135deg, #ff5555, #ff2222, #a60000);
+            background: linear-gradient(135deg, var(--oklahoma-crimson), #ff2222, #a60000);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -99,7 +106,7 @@
 
     <div class="logo-box">
         <div class="university-name">University of Oklahoma</div>
-        <div class="logo-container" id="logo-container">
+        <div class="logo-container">
             <div class="binary-code">
                 1011010100110101 1101010101101010 1001101010011010 1101010101101010 0010110100110110
             </div>
@@ -107,25 +114,6 @@
             <div class="circuit-overlay"></div>
         </div>
     </div>
-
-    <button onclick="saveLogo()">Save Logo</button>
-
-    <script>
-        function saveLogo() {
-            const logoContainer = document.getElementById('logo-container'); 
-
-            // Use html2canvas to capture the logo
-            html2canvas(logoContainer).then(function(canvas) {
-                // Convert canvas to a downloadable image
-                const link = document.createElement('a');
-                link.download = 'ou_cs_logo.png';
-                link.href = canvas.toDataURL('image/png'); // Convert canvas to image URL
-
-                // Trigger the download
-                link.click();
-            });
-        }
-    </script>
 
 </body>
 </html>
