@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Futuristic OU CS Logo</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Arvo:ital@1&family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script> <!-- HTML2Canvas Library -->
     <style>
         body {
             display: flex;
@@ -18,7 +19,6 @@
             text-align: center;
             overflow: hidden;
         }
-        /* Outer Glowing Frame */
         .logo-box {
             position: relative;
             padding: 50px 90px;
@@ -31,7 +31,6 @@
             border: 5px solid rgba(255, 255, 255, 0.3);
         }
 
-        /* University Name */
         .university-name {
             font-family: 'Arvo', serif;
             font-style: italic;
@@ -42,7 +41,6 @@
             text-shadow: 0 0 10px #ff5555, 0 0 20px #ff2222;
         }
 
-        /* Futuristic CS Logo */
         .logo-container {
             position: relative;
             font-size: 220px;
@@ -66,7 +64,6 @@
             overflow: hidden;
         }
 
-        /* Circuit Overlay Inside CS */
         .circuit-overlay {
             position: absolute;
             width: 100%;
@@ -75,7 +72,6 @@
             opacity: 0.2;
         }
 
-        /* Binary Code Inside CS Logo */
         .binary-code {
             position: absolute;
             font-family: 'Source Code Pro', monospace;
@@ -103,7 +99,7 @@
 
     <div class="logo-box">
         <div class="university-name">University of Oklahoma</div>
-        <div class="logo-container">
+        <div class="logo-container" id="logo-container">
             <div class="binary-code">
                 1011010100110101 1101010101101010 1001101010011010 1101010101101010 0010110100110110
             </div>
@@ -116,26 +112,18 @@
 
     <script>
         function saveLogo() {
-            const logoContainer = document.querySelector('.logo-container');
+            const logoContainer = document.getElementById('logo-container'); 
 
-            // Create a canvas element
-            const canvas = document.createElement('canvas');
-            const ctx = canvas.getContext('2d');
-            canvas.width = logoContainer.offsetWidth;
-            canvas.height = logoContainer.offsetHeight;
+            // Use html2canvas to capture the logo
+            html2canvas(logoContainer).then(function(canvas) {
+                // Convert canvas to a downloadable image
+                const link = document.createElement('a');
+                link.download = 'ou_cs_logo.png';
+                link.href = canvas.toDataURL('image/png'); // Convert canvas to image URL
 
-            // Draw the logo content to the canvas
-            ctx.fillStyle = '#111';
-            ctx.fillRect(0, 0, canvas.width, canvas.height); // Set the background color
-            ctx.drawImage(logoContainer, 0, 0);
-
-            // Create a download link
-            const link = document.createElement('a');
-            link.download = 'ou_cs_logo.png';
-            link.href = canvas.toDataURL('image/png');
-
-            // Trigger the download
-            link.click();
+                // Trigger the download
+                link.click();
+            });
         }
     </script>
 
