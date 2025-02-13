@@ -3,35 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CS Logo Animation</title>
+    <title>Stylish OU CS Logo</title>
+    <!-- Google Fonts for Custom Styling -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Arvo:ital@1&display=swap" rel="stylesheet">
     <style>
         body {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: black;
-            color: white;
+            background-color: #888888; /* Grey background */
             font-family: Arial, sans-serif;
-            font-size: 24px;
+            text-align: center;
+            overflow: hidden;
         }
-        #csText {
+
+        /* Outer Structure (Bounding Box) */
+        .logo-box {
+            position: relative;
+            border: 8px solid #4B4B4B; /* Neutral gray border */
+            padding: 30px 60px;
+            border-radius: 20px; /* Rounded corners */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: linear-gradient(135deg, #4B4B4B, #333333); /* Subtle gradient */
+            box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5); /* Soft shadow */
+        }
+
+        /* University Name */
+        .university-name {
+            font-family: 'Arvo', serif; /* Elegant italic style */
+            font-style: italic;
+            font-size: 32px;
             font-weight: bold;
+            color: #841617; /* OU Crimson */
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Stylish CS Logo */
+        .logo-container {
+            position: relative;
+            font-size: 180px; /* Adjusted for balance */
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 5px; /* Stylish spacing */
+            font-family: 'Orbitron', sans-serif; /* Modern, futuristic font */
+            background: linear-gradient(135deg, #841617, #a83232); /* Crimson gradient */
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5); /* 3D effect */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 6px solid white; /* Outlined effect */
+            padding: 20px 40px;
+            border-radius: 15px; /* Smooth rounded edges */
         }
     </style>
 </head>
 <body>
-    <div id="csText">CS is best 1969</div>
 
-    <script>
-        let year = 1969;
-        function updateText() {
-            document.getElementById("csText").innerText = `CS is best ${year}`;
-            year++;
-            setTimeout(updateText, 500);  // Updates every 500ms
-        }
-        updateText();
-    </script>
+    <!-- Outer Bounded Structure -->
+    <div class="logo-box">
+        <!-- University Name -->
+        <div class="university-name">University of Oklahoma</div>
+
+        <!-- Stylish Redesigned CS Logo -->
+        <div class="logo-container">C S</div>
+    </div>
+
 </body>
 </html>
+
