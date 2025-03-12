@@ -16,7 +16,7 @@
             font-size: 30px;
         }
 
-        #tic-tac-toe, #ping-pong {
+        #tic-tac-toe, #ping-pong, #snake {
             margin-top: 30px;
         }
 
@@ -63,6 +63,22 @@
             display: block;
         }
 
+        /* Snake Styles */
+        #snake-game {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+            border: 2px solid black;
+            position: relative;
+            height: 400px;
+            width: 600px;
+        }
+
+        #snake-canvas {
+            background-color: #000;
+            display: block;
+        }
+
     </style>
 </head>
 <body>
@@ -97,15 +113,22 @@
         <div id="pong-game">
             <canvas id="pong-canvas" width="600" height="400"></canvas>
         </div>
+        <p>Player 1: <span id="score1">0</span> - Player 2: <span id="score2">0</span></p>
     </div>
 
-    <!-- Placeholder for Other Games -->
-    <div id="other-games">
-        <h2>Other Games Coming Soon!</h2>
+    <!-- Snake Game -->
+    <div id="snake">
+        <h2>Snake Game</h2>
+        <div id="snake-game">
+            <canvas id="snake-canvas" width="600" height="400"></canvas>
+        </div>
     </div>
 
     <script>
+        // ===============================
         // Tic-Tac-Toe JavaScript
+        // ===============================
+
         let board = [
             ['', '', ''],
             ['', '', ''],
@@ -157,47 +180,59 @@
             currentPlayer = 'X';
         }
 
+        // ===============================
         // Ping Pong JavaScript
-        const canvas = document.getElementById('pong-canvas');
-        const ctx = canvas.getContext('2d');
+        // ===============================
+        
+        const pongCanvas = document.getElementById('pong-canvas');
+        const pongCtx = pongCanvas.getContext('2d');
 
         let paddleWidth = 10, paddleHeight = 100, ballSize = 10;
-        let paddle1Y = (canvas.height - paddleHeight) / 2, paddle2Y = (canvas.height - paddleHeight) / 2;
-        let ballX = canvas.width / 2, ballY = canvas.height / 2, ballSpeedX = 4, ballSpeedY = 4;
+        let paddle1Y = (pongCanvas.height - paddleHeight) / 2, paddle2Y = (pongCanvas.height - paddleHeight) / 2;
+        let ballX = pongCanvas.width / 2, ballY = pongCanvas.height / 2, ballSpeedX = 4, ballSpeedY = 4;
         let paddle1Speed = 0, paddle2Speed = 0;
+        let score1 = 0, score2 = 0;
 
         function drawPaddles() {
-            ctx.fillStyle = "#FFF";
-            ctx.fillRect(0, paddle1Y, paddleWidth, paddleHeight);
-            ctx.fillRect(canvas.width - paddleWidth, paddle2Y, paddleWidth, paddleHeight);
+            pongCtx.fillStyle = "#FFF";
+            pongCtx.fillRect(0, paddle1Y, paddleWidth, paddleHeight);
+            pongCtx.fillRect(pongCanvas.width - paddleWidth, paddle2Y, paddleWidth, paddleHeight);
         }
 
         function drawBall() {
-            ctx.fillStyle = "#FFF";
-            ctx.fillRect(ballX, ballY, ballSize, ballSize);
+            pongCtx.fillStyle = "#FFF";
+            pongCtx.fillRect(ballX, ballY, ballSize, ballSize);
         }
 
         function moveBall() {
             ballX += ballSpeedX;
             ballY += ballSpeedY;
 
-            if (ballY <= 0 || ballY + ballSize >= canvas.height) {
+            if (ballY <= 0 || ballY + ballSize >= pongCanvas.height) {
                 ballSpeedY = -ballSpeedY;
             }
 
             if (ballX <= paddleWidth && ballY >= paddle1Y && ballY <= paddle1Y + paddleHeight || 
-                ballX + ballSize >= canvas.width - paddleWidth && ballY >= paddle2Y && ballY <= paddle2Y + paddleHeight) {
+                ballX + ballSize >= pongCanvas.width - paddleWidth && ballY >= paddle2Y && ballY <= paddle2Y + paddleHeight) {
                 ballSpeedX = -ballSpeedX;
             }
 
-            if (ballX < 0 || ballX > canvas.width) {
+            if (ballX < 0) {
+                score2++;
+                document.getElementById('score2').textContent = score2;
+                resetBall();
+            }
+
+            if (ballX > pongCanvas.width) {
+                score1++;
+                document.getElementById('score1').textContent = score1;
                 resetBall();
             }
         }
 
         function resetBall() {
-            ballX = canvas.width / 2;
-            ballY = canvas.height / 2;
+            ballX = pongCanvas.width / 2;
+            ballY = pongCanvas.height / 2;
             ballSpeedX = -ballSpeedX;
         }
 
@@ -206,14 +241,14 @@
             paddle2Y += paddle2Speed;
 
             if (paddle1Y < 0) paddle1Y = 0;
-            if (paddle1Y + paddleHeight > canvas.height) paddle1Y = canvas.height - paddleHeight;
+            if (paddle1Y + paddleHeight > pongCanvas.height) paddle1Y = pongCanvas.height - paddleHeight;
 
             if (paddle2Y < 0) paddle2Y = 0;
-            if (paddle2Y + paddleHeight > canvas.height) paddle2Y = canvas.height - paddleHeight;
+            if (paddle2Y + paddleHeight > pongCanvas.height) paddle2Y = pongCanvas.height - paddleHeight;
         }
 
         function gameLoop() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            pongCtx.clearRect(0, 0, pongCanvas.width, pongCanvas.height);
             drawPaddles();
             drawBall();
             moveBall();
@@ -234,6 +269,78 @@
         });
 
         gameLoop();
-    </script>
-</body>
-</html>
+
+        // ===============================
+        // Snake Game JavaScript
+        // ===============================
+
+        const snakeCanvas = document.getElementById('snake-canvas');
+        const snakeCtx = snakeCanvas.getContext('2d');
+
+        const snakeSize = 20;
+        let snake = [{ x: 100, y: 100 }];
+        let direction = 'RIGHT';
+        let food = generateFood();
+        let score = 0;
+
+        function drawSnake() {
+            snakeCtx.fillStyle = "#FFF";
+            for (let i = 0; i < snake.length; i++) {
+                snakeCtx.fillRect(snake[i].x, snake[i].y, snakeSize, snakeSize);
+            }
+        }
+
+        function generateFood() {
+            let foodX = Math.floor(Math.random() * (snakeCanvas.width / snakeSize)) * snakeSize;
+            let foodY = Math.floor(Math.random() * (snakeCanvas.height / snakeSize)) * snakeSize;
+            return { x: foodX, y: foodY };
+        }
+
+        function drawFood() {
+            snakeCtx.fillStyle = "red";
+            snakeCtx.fillRect(food.x, food.y, snakeSize, snakeSize);
+        }
+
+        function moveSnake() {
+            let head = { ...snake[0] };
+
+            if (direction === 'UP') head.y -= snakeSize;
+            if (direction === 'DOWN') head.y += snakeSize;
+            if (direction === 'LEFT') head.x -= snakeSize;
+            if (direction === 'RIGHT') head.x += snakeSize;
+
+            snake.unshift(head);
+
+            if (head.x === food.x && head.y === food.y) {
+                score++;
+                food = generateFood();
+            } else {
+                snake.pop();
+            }
+
+            if (head.x < 0 || head.x >= snakeCanvas.width || head.y < 0 || head.y >= snakeCanvas.height || isCollidingWithSnake(head)) {
+                resetSnake();
+            }
+        }
+
+        function isCollidingWithSnake(head) {
+            for (let i = 1; i < snake.length; i++) {
+                if (head.x === snake[i].x && head.y === snake[i].y) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        function resetSnake() {
+            snake = [{ x: 100, y: 100 }];
+            direction = 'RIGHT';
+            score = 0;
+        }
+
+        function gameLoopSnake() {
+            snakeCtx.clearRect(0, 0, snakeCanvas.width, snakeCanvas.height);
+            drawSnake();
+            drawFood();
+            moveSnake();
+            setTimeout(gameLoopSnake
