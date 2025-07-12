@@ -1,1 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+ <title>❌⭕️ Let's Make a Tic-Tac-Toe Game in Python ❌⭕️</title>
 
+
+  
+  <style>
+    body {
+      background-color: #f0f0f0;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 20px;
+      color: #333;
+      position: relative;
+      min-height: 100vh;
+      box-sizing: border-box;
+      padding-bottom: 60px; /* space for footer */
+    }
+
+    h1 {
+      color: #2d6a4f;
+      text-align: center;
+      margin-top: 0;
+    }
+
+    .code-box {
+      background-color: #1e1e1e;
+      color: #d4d4d4;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-wrap;
+      overflow-x: auto;
+      font-size: 14px;
+      border: 1px solid #444;
+      margin-top: 20px;
+    }
+
+    .copy-btn {
+      background-color: #2d6a4f;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 14px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+      display: block;
+      margin-left: auto;
+    }
+
+    .copy-btn:hover {
+      background-color: #1b4332;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      font-size: 14px;
+      color: #444;
+    }
+
+    .footer-content {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .footer-content img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+<h1> ❌⭕️ Let's Make a Tic-Tac-Toe Game in Python ❌⭕️</h1>
+    <marquee behavior="scroll" direction="left" scrollamount="6">
+    Let's make and play ❌⭕️
+  </marquee>
+
+  <button class="copy-btn" onclick="copyCode()">Copy</button>
+
+  <pre class="code-box" id="code">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Snake Game with Start Button</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      background-color: #f0f0f0;
+    }
+
+    h1 {
+      color: #4CAF50;
+    }
+
+    #game-board {
+      width: 300px;
+      height: 300px;
+      background-color: black;
+      margin: 10px auto;
+      display: grid;
+      grid-template-columns: repeat(20, 15px);
+      grid-template-rows: repeat(20, 15px);
+      border: 4px solid #4CAF50;
+    }
+
+    .cell {
+      width: 15px;
+      height: 15px;
+    }
+
+    .snake {
+      background-color: limegreen;
+    }
+
+    .food {
+      background-color: red;
+      border-radius: 50%;
+    }
+
+    #score {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .buttons {
+      margin-top: 20px;
+    }
+
+    .btn {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 15px;
+      margin: 5px;
+      font-size: 18px;
+      border-radius: 10px;
+      width: 60px;
+    }
+
+    .start-btn {
+      background-color: #ff9800;
+      font-size: 20px;
+      padding: 10px 20px;
+      margin: 15px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .row {
+      display: flex;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>🐍 Snake Game</h1>
+  <button class="start-btn" onclick="startGame()">▶️ Start Game</button>
+  <div id="game-board"></div>
+  <p>Score: <span id="score">0</span></p>
+
+  <div class="buttons">
+    <div class="row">
+      <button class="btn" onclick="setDirection('up')">4</button>
+    </div>
+    <div class="row">
+      <button class="btn" onclick="setDirection('left')">1</button>
+      <button class="btn" onclick="setDirection('down')">2</button>
+      <button class="btn" onclick="setDirection('right')">3</button>
+    </div>
+  </div>
+
+  <!-- Sound effect -->
+  <audio id="eatSound" src="https://www.soundjay.com/button/sounds/button-16.mp3" preload="auto"></audio>
+
+  <script>
+    const board = document.getElementById("game-board");
+    const scoreDisplay = document.getElementById("score");
+    const eatSound = document.getElementById("eatSound");
+
+    const boardSize = 20;
+    let snake = [];
+    let food = {};
+    let dx = 0, dy = 0;
+    let score = 0;
+    let gameRunning = false;
+    let intervalId = null;
+
+    function initGame() {
+      snake = [{ x: 10, y: 10 }];
+      food = getRandomFood();
+      dx = 1;
+      dy = 0;
+      score = 0;
+      scoreDisplay.textContent = score;
+      gameRunning = true;
+      drawBoard();
+    }
+
+    function startGame() {
+      initGame();
+      clearInterval(intervalId);
+      intervalId = setInterval(gameLoop, 150);
+    }
+
+    function getRandomFood() {
+      return {
+        x: Math.floor(Math.random() * boardSize),
+        y: Math.floor(Math.random() * boardSize)
+      };
+    }
+
+    function drawBoard() {
+      board.innerHTML = "";
+      for (let y = 0; y < boardSize; y++) {
+        for (let x = 0; x < boardSize; x++) {
+          const cell = document.createElement("div");
+          cell.classList.add("cell");
+          if (food.x === x && food.y === y) cell.classList.add("food");
+          if (snake.some(seg => seg.x === x && seg.y === y)) cell.classList.add("snake");
+          board.appendChild(cell);
+        }
+      }
+    }
+
+    function moveSnake() {
+      const head = { x: snake[0].x + dx, y: snake[0].y + dy };
+
+      if (
+        head.x < 0 || head.x >= boardSize ||
+        head.y < 0 || head.y >= boardSize ||
+        snake.some(seg => seg.x === head.x && seg.y === head.y)
+      ) {
+        alert("💀 Game Over! Your final score was " + score);
+        gameRunning = false;
+        clearInterval(intervalId);
+        return;
+      }
+
+      snake.unshift(head);
+
+      if (head.x === food.x && head.y === food.y) {
+        score++;
+        scoreDisplay.textContent = score;
+        food = getRandomFood();
+        eatSound.play();
+      } else {
+        snake.pop();
+      }
+    }
+
+    function setDirection(direction) {
+      if (!gameRunning) return;
+      switch (direction) {
+        case "up": if (dy === 0) { dx = 0; dy = -1; } break;
+        case "down": if (dy === 0) { dx = 0; dy = 1; } break;
+        case "left": if (dx === 0) { dx = -1; dy = 0; } break;
+        case "right": if (dx === 0) { dx = 1; dy = 0; } break;
+      }
+    }
+
+    document.addEventListener("keydown", e => {
+      switch (e.key) {
+        case "1": setDirection("left"); break;
+        case "2": setDirection("down"); break;
+        case "3": setDirection("right"); break;
+        case "4": setDirection("up"); break;
+        case "ArrowUp": setDirection("up"); break;
+        case "ArrowDown": setDirection("down"); break;
+        case "ArrowLeft": setDirection("left"); break;
+        case "ArrowRight": setDirection("right"); break;
+      }
+    });
+
+    function gameLoop() {
+      if (!gameRunning) return;
+      moveSnake();
+      drawBoard();
+    }
+  </script>
+</body>
+</html>
+
+  </pre>
+
+  <footer>
+    <div class="footer-content">
+      <span>Developed by Maisha Maliha</span>
+      <img src="citations.jpeg" alt="Your Photo">
+    </div>
+  </footer>
+
+  <script>
+    function copyCode() {
+      const code = document.getElementById("code").innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        alert("Code copied to clipboard!");
+      }).catch(err => {
+        alert("Failed to copy: " + err);
+      });
+    }
+  </script>
+
+</body>
+</html>
