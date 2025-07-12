@@ -33,7 +33,7 @@
       top: 0;
       left: 10px;
       z-index: 2;
-      position: relative; /* ✅ Make eyes position correctly inside head */
+      position: relative;
     }
 
     /* Eyes */
@@ -173,6 +173,27 @@
       color: #0d47a1;
       word-break: break-word;
     }
+
+    footer {
+      margin-top: 40px;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .footer-content {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      justify-content: center;
+    }
+
+    .footer-content img {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      object-fit: cover;
+      vertical-align: middle;
+    }
   </style>
 </head>
 <body>
@@ -236,10 +257,11 @@
     }
   </script>
 
-  
   <footer>
-    Developed by Maisha Maliha
-    <img src="citations.jpeg" alt="Maisha's photo">
+    <div class="footer-content">
+      <span>Developed by Maisha Maliha</span>
+      <img src="citations.jpeg" alt="Maisha's photo">
+    </div>
   </footer>
 
 </body>
