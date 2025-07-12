@@ -65,16 +65,19 @@
       color: #333;
     }
 
-    .profile-pic {
-      width: 120px;
-      border-radius: 50%;
-      margin-top: 10px;
+    .footer-content {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      justify-content: center;
     }
 
-    .credit {
-      margin-top: 10px;
-      font-weight: bold;
-      color: #444;
+    .footer-content img {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      object-fit: cover;
+      vertical-align: middle;
     }
   </style>
 </head>
@@ -86,7 +89,6 @@
 
   <div id="message"></div>
   <button id="resetBtn" onclick="resetGame()">🔄 Reset</button>
-
 
   <script>
     const grid = document.getElementById("grid");
@@ -158,9 +160,10 @@
   </script>
 
   <footer>
-    Developed by Maisha Maliha
-    <img src="citations.jpeg" alt="Maisha's photo">
+    <div class="footer-content">
+      <span>Developed by Maisha Maliha</span>
+      <img src="citations.jpeg" alt="Maisha's photo">
+    </div>
   </footer>
-  
 </body>
 </html>
