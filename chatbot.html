@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>🤖 ChatBuddy - Python Chatbot</title>
+  <style>
+    body {
+      font-family: monospace;
+      background-color: #f9f9f9;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #4CAF50;
+    }
+
+    .code-box {
+      background-color: #272822;
+      color: #f8f8f2;
+      padding: 20px;
+      border-radius: 10px;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      border: 1px solid #ccc;
+      text-align: left;
+      margin-bottom: 30px;
+    }
+
+    button {
+      margin-bottom: 40px;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 16px;
+      color: #555;
+    }
+
+    footer img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      vertical-align: middle;
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>💬 Let's Build a Python Chatbot: ChatBuddy</h1>
+
+  <div class="code-box" id="code1">
+<pre><code>print("Hi! I'm ChatBuddy, your AI friend. Let's chat!")
+print("Type 'bye' to exit.\\n")
+
+while True:
+    user_input = input("You: ").lower()
+
+    if "hello" in user_input or "hi" in user_input:
+        print("ChatBuddy: Hello there! 😊")
+    elif "how are you" in user_input:
+        print("ChatBuddy: I'm great! Thanks for asking. How about you?")
+    elif "what is your name" in user_input:
+        print("ChatBuddy: My name is ChatBuddy! 🧠")
+    elif "bye" in user_input:
+        print("ChatBuddy: Bye! It was nice talking to you! 👋")
+        break
+    else:
+        print("ChatBuddy: I'm not sure how to respond to that. 🤔")
+</code></pre>
+  </div>
+
+  <button onclick="copyCode('code1')">📋 Copy Code</button>
+
+  <footer>
+    <p>Developed by Maisha Maliha</p>
+    <img src="citations.jpeg" alt="Maisha's photo">
+   
+  </footer>
+
+  <script>
+    function copyCode(id) {
+      const code = document.getElementById(id).innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        alert("✅ Code copied to clipboard!");
+      });
+    }
+  </script>
+
+</body>
+</html>
