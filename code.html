@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Let's Make a Snake Game in Python</title>
+  <style>
+    body {
+      background-color: #f0f0f0;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 20px;
+      color: #333;
+      position: relative;
+      min-height: 100vh;
+      box-sizing: border-box;
+      padding-bottom: 60px; /* space for footer */
+    }
+
+    h1 {
+      color: #2d6a4f;
+      text-align: center;
+      margin-top: 0;
+    }
+
+    .code-box {
+      background-color: #1e1e1e;
+      color: #d4d4d4;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-wrap;
+      overflow-x: auto;
+      font-size: 14px;
+      border: 1px solid #444;
+      margin-top: 20px;
+    }
+
+    .copy-btn {
+      background-color: #2d6a4f;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 14px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+      display: block;
+      margin-left: auto;
+    }
+
+    .copy-btn:hover {
+      background-color: #1b4332;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      font-size: 14px;
+      color: #444;
+    }
+
+    .footer-content {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .footer-content img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Let's Make a Snake Game in Python</h1>
+
+  <button class="copy-btn" onclick="copyCode()">Copy</button>
+
+  <pre class="code-box" id="code">
+# Tic-Tac-Toe for 2 Players
+
+# Create the board
+board = [" " for _ in range(9)]
+
+# Display the board
+def display():
+    print()
+    print(board[0] + "|" + board[1] + "|" + board[2])
+    print("-+-+-")
+    print(board[3] + "|" + board[4] + "|" + board[5])
+    print("-+-+-")
+    print(board[6] + "|" + board[7] + "|" + board[8])
+    print()
+
+# Check for a win
+def check_winner(player):
+    win_conditions = [
+        [0,1,2], [3,4,5], [6,7,8],  # rows
+        [0,3,6], [1,4,7], [2,5,8],  # cols
+        [0,4,8], [2,4,6]            # diagonals
+    ]
+    for combo in win_conditions:
+        if board[combo[0]] == board[combo[1]] == board[combo[2]] == player:
+            return True
+    return False
+
+# Main game loop
+def play_game():
+    current_player = "X"
+    for turn in range(9):
+        display()
+        move = int(input(f"Player {current_player}, choose 0–8: "))
+        if board[move] == " ":
+            board[move] = current_player
+            if check_winner(current_player):
+                display()
+                print(f"Player {current_player} wins!")
+                return
+            current_player = "O" if current_player == "X" else "X"
+        else:
+            print("Spot taken. Try again.")
+    display()
+    print("It's a tie!")
+
+play_game()
+  </pre>
+
+  <footer>
+    <div class="footer-content">
+      <span>Developed by Your Name</span>
+      <img src="your-photo.jpg" alt="Your Photo">
+    </div>
+  </footer>
+
+  <script>
+    function copyCode() {
+      const code = document.getElementById("code").innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        alert("Code copied to clipboard!");
+      }).catch(err => {
+        alert("Failed to copy: " + err);
+      });
+    }
+  </script>
+
+</body>
+</html>
