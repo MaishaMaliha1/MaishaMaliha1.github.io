@@ -31,7 +31,7 @@
       font-size: 12px;
       border: 1px solid #444;
       margin-top: 20px;
-      max-height: 500px;
+      max-height: 600px;
     }
 
     .copy-btn {
@@ -89,7 +89,51 @@
   &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"/&gt;
   &lt;title&gt;Snake Game with Start Button&lt;/title&gt;
   &lt;style&gt;
-/* CSS code here - omitted for brevity */
+    body {
+      font-family: Arial;
+      text-align: center;
+      background-color: #f0f0f0;
+    }
+    h1 {
+      color: #4CAF50;
+    }
+    #game-board {
+      width: 300px;
+      height: 300px;
+      background-color: black;
+      margin: 10px auto;
+      display: grid;
+      grid-template-columns: repeat(20, 15px);
+      grid-template-rows: repeat(20, 15px);
+      border: 4px solid #4CAF50;
+    }
+    .cell { width: 15px; height: 15px; }
+    .snake { background-color: limegreen; }
+    .food { background-color: red; border-radius: 50%; }
+    #score { font-weight: bold; font-size: 18px; }
+    .buttons { margin-top: 20px; }
+    .btn {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 15px;
+      margin: 5px;
+      font-size: 18px;
+      border-radius: 10px;
+      width: 60px;
+    }
+    .start-btn {
+      background-color: #ff9800;
+      font-size: 20px;
+      padding: 10px 20px;
+      margin: 15px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .row {
+      display: flex;
+      justify-content: center;
+    }
   &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
@@ -112,7 +156,109 @@
   &lt;audio id="eatSound" src="https://www.soundjay.com/button/sounds/button-16.mp3" preload="auto"&gt;&lt;/audio&gt;
 
   &lt;script&gt;
-/* JS code here - omitted for brevity */
+    const board = document.getElementById("game-board");
+    const scoreDisplay = document.getElementById("score");
+    const eatSound = document.getElementById("eatSound");
+
+    const boardSize = 20;
+    let snake = [];
+    let food = {};
+    let dx = 0, dy = 0;
+    let score = 0;
+    let gameRunning = false;
+    let intervalId = null;
+
+    function initGame() {
+      snake = [{ x: 10, y: 10 }];
+      food = getRandomFood();
+      dx = 1;
+      dy = 0;
+      score = 0;
+      scoreDisplay.textContent = score;
+      gameRunning = true;
+      drawBoard();
+    }
+
+    function startGame() {
+      initGame();
+      clearInterval(intervalId);
+      intervalId = setInterval(gameLoop, 150);
+    }
+
+    function getRandomFood() {
+      return {
+        x: Math.floor(Math.random() * boardSize),
+        y: Math.floor(Math.random() * boardSize)
+      };
+    }
+
+    function drawBoard() {
+      board.innerHTML = "";
+      for (let y = 0; y < boardSize; y++) {
+        for (let x = 0; x < boardSize; x++) {
+          const cell = document.createElement("div");
+          cell.classList.add("cell");
+          if (food.x === x && food.y === y) cell.classList.add("food");
+          if (snake.some(seg => seg.x === x && seg.y === y)) cell.classList.add("snake");
+          board.appendChild(cell);
+        }
+      }
+    }
+
+    function moveSnake() {
+      const head = { x: snake[0].x + dx, y: snake[0].y + dy };
+
+      if (
+        head.x &lt; 0 || head.x &gt;= boardSize ||
+        head.y &lt; 0 || head.y &gt;= boardSize ||
+        snake.some(seg =&gt; seg.x === head.x &amp;&amp; seg.y === head.y)
+      ) {
+        alert("💀 Game Over! Your final score was " + score);
+        gameRunning = false;
+        clearInterval(intervalId);
+        return;
+      }
+
+      snake.unshift(head);
+
+      if (head.x === food.x &amp;&amp; head.y === food.y) {
+        score++;
+        scoreDisplay.textContent = score;
+        food = getRandomFood();
+        eatSound.play();
+      } else {
+        snake.pop();
+      }
+    }
+
+    function setDirection(direction) {
+      if (!gameRunning) return;
+      switch (direction) {
+        case "up": if (dy === 0) { dx = 0; dy = -1; } break;
+        case "down": if (dy === 0) { dx = 0; dy = 1; } break;
+        case "left": if (dx === 0) { dx = -1; dy = 0; } break;
+        case "right": if (dx === 0) { dx = 1; dy = 0; } break;
+      }
+    }
+
+    document.addEventListener("keydown", e =&gt; {
+      switch (e.key) {
+        case "1": setDirection("left"); break;
+        case "2": setDirection("down"); break;
+        case "3": setDirection("right"); break;
+        case "4": setDirection("up"); break;
+        case "ArrowUp": setDirection("up"); break;
+        case "ArrowDown": setDirection("down"); break;
+        case "ArrowLeft": setDirection("left"); break;
+        case "ArrowRight": setDirection("right"); break;
+      }
+    });
+
+    function gameLoop() {
+      if (!gameRunning) return;
+      moveSnake();
+      drawBoard();
+    }
   &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;
@@ -127,9 +273,9 @@
 
   <script>
     function copyCode() {
-      const code = document.getElementById("code");
+      const code = document.getElementById("code").innerText;
       const textArea = document.createElement("textarea");
-      textArea.value = code.innerText;
+      textArea.value = code;
       document.body.appendChild(textArea);
       textArea.select();
       document.execCommand("copy");
