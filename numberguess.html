@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>🎯 Number Guessing Game in Python</title>
+  <style>
+    body {
+      font-family: monospace;
+      background-color: #f9f9f9;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #4CAF50;
+    }
+
+    .code-box {
+      background-color: #272822;
+      color: #f8f8f2;
+      padding: 20px;
+      border-radius: 10px;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 16px;
+      color: #555;
+    }
+
+    footer img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      vertical-align: middle;
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎯 Let's Learn Number Guessing Game in Python!</h1>
+
+  <div class="code-box" id="code">
+<pre><code>import random
+
+secret = random.randint(1, 10)
+tries = 3
+
+while tries &gt; 0:
+    guess = int(input(f"You have {tries} tries. Guess: "))
+    if guess == secret:
+        print("🎉 You guessed it!")
+        break
+    elif guess &lt; secret:
+        print("Too low!")
+    else:
+        print("Too high!")
+    tries -= 1
+
+if guess != secret:
+    print("Game over. The number was", secret)
+</code></pre>
+  </div>
+
+  <button onclick="copyCode()">📋 Copy Code</button>
+
+  <footer>
+    <p>Developed by Maisha Maliha</p>
+    <img src="citations.jpeg" alt="Maisha's photo">
+   
+  </footer>
+
+  <script>
+    function copyCode() {
+      const code = document.getElementById("code").innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        alert("✅ Code copied to clipboard!");
+      });
+    }
+  </script>
+
+</body>
+</html>
