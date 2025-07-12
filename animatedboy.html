@@ -27,12 +27,13 @@
     .head {
       width: 100px;
       height: 100px;
-      background-color: #ffcc80;
+      background-color: #ffe066;
       border-radius: 50%;
       position: absolute;
       top: 0;
       left: 10px;
       z-index: 2;
+      position: relative; /* ✅ Make eyes position correctly inside head */
     }
 
     /* Eyes */
@@ -44,6 +45,7 @@
       position: absolute;
       top: 35px;
       animation: blink 3s infinite;
+      z-index: 3;
     }
 
     .eye.left { left: 25px; }
@@ -63,7 +65,7 @@
       position: absolute;
       top: 0;
       left: 10px;
-      z-index: 3;
+      z-index: 4;
       animation: wave 4s infinite ease-in-out;
     }
 
@@ -72,7 +74,7 @@
       50% { transform: rotate(1.5deg); }
     }
 
-    /* Body / Shirt */
+    /* Body (Shirt) */
     .body {
       width: 60px;
       height: 90px;
@@ -94,12 +96,12 @@
     .arm {
       width: 10px;
       height: 70px;
-      background-color: #ffcc80;
+      background-color: #ffe066;
       position: absolute;
       top: 110px;
+      z-index: 0;
       transform-origin: top center;
       animation: swing 3s ease-in-out infinite;
-      z-index: 0;
     }
 
     .arm.left { left: 15px; transform: rotate(10deg); }
@@ -114,10 +116,11 @@
     .hand {
       width: 12px;
       height: 12px;
-      background-color: #ffcc80;
+      background-color: #ffe066;
       border-radius: 50%;
       position: absolute;
       top: 175px;
+      z-index: 1;
     }
 
     .hand.left { left: 10px; }
@@ -127,14 +130,111 @@
     .leg {
       width: 10px;
       height: 50px;
-      background-color: #ffcc80;
+      background-color: #ffe066;
       position: absolute;
       top: 190px;
+      z-index: 1;
     }
 
     .leg.left { left: 35px; }
     .leg.right { right: 35px; }
 
-    /* Shoes */
+    /* Feet (Shoes) */
     .foot {
-      width:
+      width: 20px;
+      height: 10px;
+      background-color: black;
+      position: absolute;
+      top: 240px;
+      z-index: 1;
+    }
+
+    .foot.left { left: 30px; }
+    .foot.right { right: 30px; }
+
+    #controls {
+      margin-top: 20px;
+    }
+
+    input[type="color"] {
+      margin: 0 10px;
+    }
+
+    #preview-img {
+      margin-top: 10px;
+      border: 2px dashed #0d47a1;
+      max-width: 200px;
+    }
+
+    #generated-link {
+      margin-top: 5px;
+      display: block;
+      font-size: 14px;
+      color: #0d47a1;
+      word-break: break-word;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Animated Boy</h1>
+  <div class="boy" id="boy">
+    <div class="hair" id="hair"></div>
+    <div class="head">
+      <div class="eye left"></div>
+      <div class="eye right"></div>
+    </div>
+    <div class="body" id="shirt"></div>
+    <div class="arm left"></div>
+    <div class="arm right"></div>
+    <div class="hand left"></div>
+    <div class="hand right"></div>
+    <div class="leg left"></div>
+    <div class="leg right"></div>
+    <div class="foot left" id="footLeft"></div>
+    <div class="foot right" id="footRight"></div>
+  </div>
+
+  <div id="controls">
+    <label>Hair Color: <input type="color" id="hairColor" value="#654321"></label>
+    <label>Shirt Color: <input type="color" id="shirtColor" value="#90caf9"></label>
+    <label>Shoe Color: <input type="color" id="shoeColor" value="#000000"></label>
+    <button onclick="generateImage()">Generate Image</button>
+    <br><br>
+    <img id="preview-img" />
+    <a id="generated-link" target="_blank"></a>
+  </div>
+
+  <script>
+    const hair = document.getElementById('hair');
+    const shirt = document.getElementById('shirt');
+    const footLeft = document.getElementById('footLeft');
+    const footRight = document.getElementById('footRight');
+
+    document.getElementById('hairColor').addEventListener('input', function() {
+      hair.style.backgroundColor = this.value;
+    });
+
+    document.getElementById('shirtColor').addEventListener('input', function() {
+      shirt.style.backgroundColor = this.value;
+    });
+
+    document.getElementById('shoeColor').addEventListener('input', function() {
+      footLeft.style.backgroundColor = this.value;
+      footRight.style.backgroundColor = this.value;
+    });
+
+    function generateImage() {
+      const boy = document.getElementById('boy');
+      html2canvas(boy).then(canvas => {
+        const img = document.getElementById('preview-img');
+        img.src = canvas.toDataURL('image/png');
+        const link = document.getElementById('generated-link');
+        link.href = img.src;
+        link.textContent = "Copy this image link";
+      });
+    }
+  </script>
+
+</body>
+</html>
