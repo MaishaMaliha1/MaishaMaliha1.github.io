@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Magic Square 3x3 Puzzle</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e6f2ff;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #1a75ff;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 80px);
+      gap: 10px;
+      justify-content: center;
+      margin: 20px auto;
+    }
+
+    .cell {
+      width: 80px;
+      height: 80px;
+      font-size: 24px;
+      text-align: center;
+      line-height: 80px;
+      background-color: white;
+      border: 2px solid #1a75ff;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .cell.filled {
+      background-color: #d9edf7;
+    }
+
+    #message {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    #resetBtn {
+      margin-top: 20px;
+      padding: 8px 16px;
+      font-size: 16px;
+      background-color: #1a75ff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #resetBtn:hover {
+      background-color: #0047b3;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .profile-pic {
+      width: 120px;
+      border-radius: 50%;
+      margin-top: 10px;
+    }
+
+    .credit {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+  <h1>Magic 15 Puzzle</h1>
+  <p>Click on a cell to enter a number (1–9). Make every row, column, and diagonal add up to 15!</p>
+
+  <div class="grid" id="grid"></div>
+
+  <div id="message"></div>
+  <button id="resetBtn" onclick="resetGame()">🔄 Reset</button>
+
+  <footer>
+    <img class="profile-pic" src="citations.jpeg" alt="Maisha Maliha">
+    <div class="credit">Developed by Maisha Maliha</div>
+  </footer>
+
+  <script>
+    const grid = document.getElementById("grid");
+    const message = document.getElementById("message");
+    const usedNumbers = new Set();
+
+    for (let i = 0; i < 9; i++) {
+      const cell = document.createElement("div");
+      cell.className = "cell";
+      cell.dataset.index = i;
+
+      cell.onclick = () => {
+        const oldValue = parseInt(cell.textContent);
+        const num = prompt("Enter a number from 1 to 9:");
+        const value = parseInt(num);
+
+        if (!value || value < 1 || value > 9) {
+          alert("Please enter a number between 1 and 9.");
+          return;
+        }
+
+        if (value !== oldValue && usedNumbers.has(value)) {
+          alert("You already used this number in another cell.");
+          return;
+        }
+
+        if (oldValue) usedNumbers.delete(oldValue);
+        usedNumbers.add(value);
+
+        cell.textContent = value;
+        cell.classList.add("filled");
+        checkMagicSquare();
+      };
+
+      grid.appendChild(cell);
+    }
+
+    function checkMagicSquare() {
+      const values = [...grid.children].map(cell => parseInt(cell.textContent) || 0);
+      if (values.includes(0)) {
+        message.textContent = "";
+        return;
+      }
+
+      const lines = [
+        [0, 1, 2], [3, 4, 5], [6, 7, 8], // rows
+        [0, 3, 6], [1, 4, 7], [2, 5, 8], // columns
+        [0, 4, 8], [2, 4, 6]             // diagonals
+      ];
+
+      const isMagic = lines.every(line => {
+        const sum = line.map(i => values[i]).reduce((a, b) => a + b, 0);
+        return sum === 15;
+      });
+
+      message.textContent = isMagic
+        ? "🎉 Congratulations! It's a Magic Square!"
+        : "❌ Not magic yet. Make sure all lines add up to 15.";
+    }
+
+    function resetGame() {
+      usedNumbers.clear();
+      [...grid.children].forEach(cell => {
+        cell.textContent = "";
+        cell.classList.remove("filled");
+      });
+      message.textContent = "";
+    }
+  </script>
+</body>
+</html>
