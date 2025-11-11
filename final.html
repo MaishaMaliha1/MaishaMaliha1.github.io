@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Final Exam - CS 1213</title>
+  <style>
+    html, body {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      background-color: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    h2 {
+      font-size: 22px;
+      font-weight: normal;
+      line-height: 1.6;
+      margin: 0 40px;
+      color: #f2f2f2;
+    }
+
+    /* Large glowing digital clock */
+    #clock {
+      position: fixed;
+      top: 20px;
+      right: 40px;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 15px 30px;
+      border-radius: 10px;
+      font-size: 70px;          /* Big clock */
+      font-weight: bold;
+      color: #00ff99;           /* Neon green look */
+      letter-spacing: 2px;
+      font-family: 'Courier New', monospace; /* Digital style font */
+      box-shadow: 0 0 20px #00ff99;
+    }
+  </style>
+</head>
+<body>
+  <div id="clock"></div>
+
+  <div>
+    <h1>Final Exam – CS 1213</h1>
+    <h2>
+      Remove the paper clip to submit your <strong>Part 1</strong>,
+      <strong>Part 2</strong>, and <strong>Part 3</strong> of the final exam paper
+      in the respective piles on the table. <br><br>
+      Write your <strong>Name</strong> and <strong>OU ID</strong> on <strong>all parts</strong> of your exam. <br><br>
+      After you finish your exam, please <strong>sign the attendance sheet</strong> before leaving.
+    </h2>
+  </div>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const options = {
+        timeZone: "America/Chicago",  // CDT timezone
+        hour12: true,
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit"
+      };
+      document.getElementById("clock").textContent =
+        now.toLocaleTimeString("en-US", options);
+    }
+    updateClock();
+    setInterval(updateClock, 1000);
+  </script>
+</body>
+</html>
