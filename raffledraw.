@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Raffle Draw Python Code</title>
+</head>
+<body>
+    <h1>Raffle Draw Program (Python)</h1>
+    <pre>
+import random
+
+emails = ["maisha.maliha-1@ou.edu" , "m@ou.edu", "a@ou.edu", "w@ou.edu", "z@ou.edu", "l@ou.edu", "y@ou.edu"
+    
+]
+
+winners = random.sample(emails, 3)
+
+print("🎉 Raffle Winners 🎉")
+for i, w in enumerate(winners, start=1):
+    print(f"{i}. {w}")
+    </pre>
+</body>
+</html>
+
