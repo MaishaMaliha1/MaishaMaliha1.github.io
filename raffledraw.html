@@ -1,24 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Raffle Draw Python Code</title>
+  <meta charset="UTF-8">
+  <title>Raffle Draw</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f9fa;
+      text-align: center;
+      margin-top: 80px;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      font-size: 18px;
+      margin: 8px 0;
+    }
+  </style>
 </head>
 <body>
-    <h1>Raffle Draw Program (Python)</h1>
-    <pre>
-import random
+  <h1>🎉 Raffle Draw 🎉</h1>
+  <button onclick="pickWinners()">Pick 5 Random Winners</button>
+  <ul id="winnerList"></ul>
 
-emails = ["maisha.maliha-1@ou.edu" , "m@ou.edu", "a@ou.edu", "w@ou.edu", "z@ou.edu", "l@ou.edu", "y@ou.edu"
-    
-]
+  <script>
+    const emails = [
+      "alice@gmail.com", "bob@yahoo.com", "carla@gmail.com", "david@hotmail.com",
+      "emily@gmail.com", "frank@yahoo.com", "grace@gmail.com", "henry@gmail.com",
+      "irene@gmail.com", "jack@yahoo.com",
+      // ... add all 100 emails here ...
+      "zoe@gmail.com"
+    ];
 
-winners = random.sample(emails, 3)
-
-print("🎉 Raffle Winners 🎉")
-for i, w in enumerate(winners, start=1):
-    print(f"{i}. {w}")
-    </pre>
+    function pickWinners() {
+      const shuffled = emails.sort(() => 0.5 - Math.random());
+      const winners = shuffled.slice(0, 5);
+      const list = document.getElementById("winnerList");
+      list.innerHTML = "";
+      winners.forEach((email, i) => {
+        const li = document.createElement("li");
+        li.textContent = `${i + 1}. ${email}`;
+        list.appendChild(li);
+      });
+    }
+  </script>
 </body>
 </html>
-
