@@ -9,8 +9,8 @@
       width: 100%;
       margin: 0;
       padding: 0;
-      background-color: #111;
-      color: white;
+      background-color: #f9f9f9;   /* Light background */
+      color: #222;
       font-family: Arial, sans-serif;
       display: flex;
       flex-direction: column;
@@ -21,34 +21,35 @@
     }
 
     h1 {
-      font-size: 42px;
-      margin-bottom: 10px;
+      font-size: 64px;             /* ⬆️ Bigger title */
+      margin-bottom: 20px;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
+      color: #000;
     }
 
     h2 {
-      font-size: 22px;
+      font-size: 32px;             /* ⬆️ Bigger instructions */
       font-weight: normal;
-      line-height: 1.6;
-      margin: 0 40px;
-      color: #f2f2f2;
+      line-height: 1.8;
+      margin: 0 60px;
+      color: #333;
     }
 
-    /* Large glowing digital clock */
+    /* Large bright digital clock */
     #clock {
       position: fixed;
       top: 20px;
       right: 40px;
-      background: rgba(0, 0, 0, 0.7);
-      padding: 15px 30px;
+      background: rgba(0, 0, 0, 0.1);
+      padding: 20px 40px;
       border-radius: 10px;
-      font-size: 70px;          /* Big clock */
+      font-size: 90px;             /* ⬆️ Bigger clock */
       font-weight: bold;
-      color: #00ff99;           /* Neon green look */
-      letter-spacing: 2px;
-      font-family: 'Courier New', monospace; /* Digital style font */
-      box-shadow: 0 0 20px #00ff99;
+      color: #008000;              /* Green digital look */
+      letter-spacing: 3px;
+      font-family: 'Courier New', monospace;
+      box-shadow: 0 0 15px #aaffaa;
     }
   </style>
 </head>
