@@ -16,10 +16,6 @@
             --border: #dddddd;
         }
 
-        * {
-            box-sizing: border-box;
-        }
-
         body {
             margin: 0;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -40,20 +36,13 @@
         }
 
         header h1 {
-            margin: 0 0 0.25rem 0;
+            margin: 0;
             font-size: 2rem;
-            letter-spacing: 0.02em;
         }
 
         header p {
-            margin: 0.15rem 0;
+            margin: 0.2rem 0;
             color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        .scholar-link {
-            margin-top: 0.5rem;
-            font-size: 0.9rem;
         }
 
         .scholar-link a {
@@ -62,25 +51,14 @@
             font-weight: 500;
         }
 
-        .scholar-link a:hover {
-            text-decoration: underline;
-        }
-
         .pill {
             display: inline-block;
-            padding: 0.15rem 0.5rem;
+            padding: 0.2rem 0.6rem;
             border-radius: 999px;
             background-color: var(--accent-soft);
             color: var(--accent);
             font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-top: 0.5rem;
-        }
-
-        .pub-list {
-            margin-top: 2rem;
+            margin-top: 0.4rem;
         }
 
         .pub-year-heading {
@@ -99,18 +77,12 @@
             padding: 1rem 1.1rem;
             margin-bottom: 0.75rem;
             border: 1px solid var(--border);
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
-        }
-
-        .pub-title {
-            margin: 0 0 0.35rem 0;
-            font-size: 1rem;
-            font-weight: 600;
         }
 
         .pub-title a {
             color: var(--accent);
             text-decoration: none;
+            font-weight: 600;
         }
 
         .pub-title a:hover {
@@ -129,248 +101,43 @@
 
         .pub-extra {
             margin-top: 0.4rem;
-            font-size: 0.85rem;
             color: var(--text-muted);
-        }
-
-        .citations {
-            font-weight: 500;
+            font-size: 0.85rem;
         }
 
         .ext-icon {
             font-size: 0.8em;
             margin-left: 0.15rem;
         }
-
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --bg: #111827;
-                --card-bg: #020617;
-                --accent: #60a5fa;
-                --accent-soft: #1d283a;
-                --text-main: #f9fafb;
-                --text-muted: #9ca3af;
-                --border: #1f2933;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .page-wrapper {
-                padding: 1.5rem 1rem 2.5rem;
-            }
-        }
     </style>
 </head>
+
 <body>
 <div class="page-wrapper">
+
     <header>
         <h1>Research Publications</h1>
         <p><strong>Maisha Maliha</strong></p>
         <p>Ph.D. Candidate, Computer Science – University of Oklahoma</p>
-        <div class="scholar-link">
-            <a href="https://scholar.google.com/citations?user=-zTUmEMAAAAJ" target="_blank" rel="noopener noreferrer">
-                View on Google Scholar<span class="ext-icon">↗</span>
+
+        <p class="scholar-link">
+            <a href="https://scholar.google.com/citations?user=-zTUmEMAAAAJ" target="_blank">
+                View on Google Scholar ↗
             </a>
-        </div>
-        <div class="pill">Selected publications</div>
+        </p>
+
+        <div class="pill">Latest to Oldest</div>
     </header>
 
     <section class="pub-list">
 
-        <!-- 2019 -->
-        <div class="pub-year-heading">2019</div>
-
-        <article class="publication">
-            <h2 class="pub-title">
-                <a href="https://www.researchgate.net/publication/339980709_Sentiment_Analysis_with_NNLP_on_Twitter_Data"
-                   target="_blank" rel="noopener noreferrer">
-                    Sentiment Analysis with NLP on Twitter Data<span class="ext-icon">↗</span>
-                </a>
-            </h2>
-            <div class="pub-meta">
-                <span>MR Hasan, M Maliha, M Arifuzzaman</span>
-                <span>IC4ME2 – International Conference on Computer, Communication, Chemical & Materials Engineering</span>
-                <span>2019</span>
-            </div>
-            <div class="pub-extra">
-                <span class="citations">Citations: 153</span>
-            </div>
-        </article>
-
-        <!-- 2021 -->
-        <div class="pub-year-heading">2021</div>
-
-        <article class="publication">
-            <h2 class="pub-title">
-                <a href="https://doi.org/10.1109/ICTP53732.2021.9744169"
-                   target="_blank" rel="noopener noreferrer">
-                    A Supervised Learning Approach: Detection of Cyber Attacks<span class="ext-icon">↗</span>
-                </a>
-            </h2>
-            <div class="pub-meta">
-                <span>M Maliha</span>
-                <span>IEEE International Conference on Telecommunications and Photonics (ICTP)</span>
-                <span>2021</span>
-            </div>
-            <div class="pub-extra">
-                <span class="citations">Citations: 10</span>
-            </div>
-        </article>
-
-        <!-- 2022 -->
-        <div class="pub-year-heading">2022</div>
-
-        <article class="publication">
-            <h2 class="pub-title">
-                <a href="https://www.researchgate.net/publication/368405182_Analyzing_Sentiment_Towards_a_Product_using_DistilBERT_and_LSTM"
-                   target="_blank" rel="noopener noreferrer">
-                    Analyzing Sentiment Towards a Product using DistilBERT and LSTM<span class="ext-icon">↗</span>
-                </a>
-            </h2>
-            <div class="pub-meta">
-                <span>V Pramanik, M Maliha</span>
-                <span>ICCCIS 2022 – International Conference on Computing, Communication, and Intelligent Systems</span>
-                <span>2022</span>
-            </div>
-            <div class="pub-extra">
-                <span class="citations">Citations: 5</span>
-            </div>
-        </article>
-
-        <!-- 2023 -->
-        <div class="pub-year-heading">2023</div>
-
-        <article class="publication">
-            <h2 class="pub-title">
-                <a href="https://annals-csis.org/Volume_35/drp/9832.html"
-                   target="_blank" rel="noopener noreferrer">
-                    A Survey on Congestion Control and Scheduling for Multipath TCP: Machine Learning vs Classical Approaches<span class="ext-icon">↗</span>
-                </a>
-            </h2>
-            <div class="pub-meta">
-                <span>M Maliha, G Habibi, M Atiquzzaman</span>
-                <span>FedCSIS 2023 – 18th Conference on Computer Science and Intelligence Systems</span>
-                <span>2023</span>
-            </div>
-            <div class="pub-extra">
-                <span class="citations">Citations: 7</span>
-            </div>
-        </article>
-
-        <article class="publication">
-            <h2 class="pub-title">
-                <a href="https://www.researchgate.net/publication/375883431_Vehicle_Detection_and_Identification_System_Convolutional_Neural_Network_with_Self-Attention"
-                   target="_blank" rel="noopener noreferrer">
-                    Vehicle Detection and Identification System: Convolutional Neural Network with Self-Attention<span class="ext-icon">↗</span>
-                </a>
-            </h2>
-            <div class="pub-meta">
-                <span>M Maliha, V Pramanik</span>
-                <span>ICCCNT 2023 – 14th International Conference on Computing Communication and Networking Technologies</span>
-                <span>2023</span>
-            </div>
-            <div class="pub-extra">
-                <span class="citations">Citations: 2</span>
-            </div>
-        </article>
-
-        <article class="publication">
-            <h2 class="pub-title">
-                <a href="https://scale.stanford.edu/ai/repository/hey-ai-can-you-grade-my-essay-automatic-essay-grading"
-                   target="_blank" rel="noopener noreferrer">
-                    Hey AI Can You Grade My Essay?: Automatic Essay Grading<span class="ext-icon">↗</span>
-                </a>
-            </h2>
-            <div class="pub-meta">
-                <span>M Maliha, V Pramanik</span>
-                <span>ICAAAIML 2023 – 4th International Conference on Advances and Applications of Machine Learning</span>
-                <span>2023</span>
-            </div>
-            <div class="pub-extra">
-                <span class="citations">Citations: 1</span>
-            </div>
-        </article>
-
-        <!-- 2024 -->
-        <div class="pub-year-heading">2024</div>
-
-        <article class="publication">
-            <h2 class="pub-title">
-                <a href="https://www.researchgate.net/publication/384129286_Aviation_Passenger_Segmentation_through_GANs_Integrating_K-Means_Clustering_Innovating_Airline_Optimization"
-                   target="_blank" rel="noopener noreferrer">
-                    Aviation Passenger Segmentation through GANs Integrating K-Means Clustering: Innovating Airline Optimization<span class="ext-icon">↗</span>
-                </a>
-            </h2>
-            <div class="pub-meta">
-                <span>M Maliha, D Hougen</span>
-                <span>NAECON 2024 – IEEE National Aerospace and Electronics Conference, pp. 194–199</span>
-                <span>2024</span>
-            </div>
-            <div class="pub-extra">
-                <span class="citations">Citations: 1</span>
-            </div>
-        </article>
-
-        <article class="publication">
-            <h2 class="pub-title">
-                <a href="https://www.researchgate.net/publication/384138632_Human_Fatality_Estimation_in_Aircraft_Accidents"
-                   target="_blank" rel="noopener noreferrer">
-                    Human Fatality Estimation in Aircraft Accidents<span class="ext-icon">↗</span>
-                </a>
-            </h2>
-            <div class="pub-meta">
-                <span>V Pramanik, M Maliha, SK Jha</span>
-                <span>NAECON 2024 – IEEE National Aerospace and Electronics Conference, pp. 190–193</span>
-                <span>2024</span>
-            </div>
-            <div class="pub-extra">
-                <span class="citations">Citations: –</span>
-            </div>
-        </article>
-
-        <!-- 2025 -->
+        <!-- ⭐ 2025 -->
         <div class="pub-year-heading">2025</div>
 
         <article class="publication">
             <h2 class="pub-title">
-                <a href="https://arxiv.org/abs/2510.00274"
-                   target="_blank" rel="noopener noreferrer">
-                    MAGIC-MASK: Multi-Agent Guided Inter-Agent Collaboration with Mask-Based Explainability for Reinforcement Learning<span class="ext-icon">↗</span>
-                </a>
-            </h2>
-            <div class="pub-meta">
-                <span>M Maliha, D Hougen</span>
-                <span>arXiv preprint arXiv:2510.00274</span>
-                <span>2025</span>
-            </div>
-            <div class="pub-extra">
-                <span class="citations">Citations: –</span>
-            </div>
-        </article>
-
-        <article class="publication">
-            <h2 class="pub-title">
-                <a href="https://annals-csis.org/Volume_43/drp/1820.html"
-                   target="_blank" rel="noopener noreferrer">
-                    Q-ID: A Reinforcement Learning Framework for Adaptive Intrusion Detection<span class="ext-icon">↗</span>
-                </a>
-            </h2>
-            <div class="pub-meta">
-                <span>M Maliha, M Atiquzzaman</span>
-                <span>FedCSIS 2025 – 20th Conference on Computer Science and Intelligence Systems</span>
-                <span>2025</span>
-            </div>
-            <div class="pub-extra">
-                <span class="citations">Citations: –</span>
-            </div>
-        </article>
-
-        <!-- ⭐ NEW: HETA PAPER ⭐ -->
-        <article class="publication">
-            <h2 class="pub-title">
-                <a href="https://openreview.net/forum?id=RzbciCo1ZI"
-                   target="_blank" rel="noopener noreferrer">
-                    Hessian-Enhanced Token Attribution (HETA): Interpreting Autoregressive Language Models<span class="ext-icon">↗</span>
+                <a href="https://openreview.net/forum?id=RzbciCo1ZI" target="_blank">
+                    Hessian-Enhanced Token Attribution (HETA): Interpreting Autoregressive Language Models ↗
                 </a>
             </h2>
             <div class="pub-meta">
@@ -378,8 +145,150 @@
                 <span>NeurIPS 2025 Workshop on Foundation Models for Reinforcement Learning (FoRLM)</span>
                 <span>2025 (submitted)</span>
             </div>
-            <div class="pub-extra">
-                <span class="citations">Citations: –</span>
+        </article>
+
+        <article class="publication">
+            <h2 class="pub-title">
+                <a href="https://arxiv.org/abs/2510.00274" target="_blank">
+                    MAGIC-MASK: Multi-Agent Guided Inter-Agent Collaboration with Mask-Based Explainability for Reinforcement Learning ↗
+                </a>
+            </h2>
+            <div class="pub-meta">
+                <span>M Maliha, D Hougen</span>
+                <span>arXiv preprint arXiv:2510.00274</span>
+                <span>2025</span>
+            </div>
+        </article>
+
+        <article class="publication">
+            <h2 class="pub-title">
+                <a href="https://annals-csis.org/Volume_43/drp/1820.html" target="_blank">
+                    Q-ID: A Reinforcement Learning Framework for Adaptive Intrusion Detection ↗
+                </a>
+            </h2>
+            <div class="pub-meta">
+                <span>M Maliha, M Atiquzzaman</span>
+                <span>FedCSIS 2025 – 20th Conference on Computer Science and Intelligence Systems</span>
+                <span>2025</span>
+            </div>
+        </article>
+
+        <!-- ⭐ 2024 -->
+        <div class="pub-year-heading">2024</div>
+
+        <article class="publication">
+            <h2 class="pub-title">
+                <a href="https://www.researchgate.net/publication/384129286_Aviation_Passenger_Segmentation_through_GANs_Integrating_K-Means_Clustering_Innovating_Airline_Optimization" target="_blank">
+                    Aviation Passenger Segmentation through GANs Integrating K-Means Clustering ↗
+                </a>
+            </h2>
+            <div class="pub-meta">
+                <span>M Maliha, D Hougen</span>
+                <span>NAECON 2024, pp. 194–199</span>
+                <span>2024</span>
+            </div>
+        </article>
+
+        <article class="publication">
+            <h2 class="pub-title">
+                <a href="https://www.researchgate.net/publication/384138632_Human_Fatality_Estimation_in_Aircraft_Accidents" target="_blank">
+                    Human Fatality Estimation in Aircraft Accidents ↗
+                </a>
+            </h2>
+            <div class="pub-meta">
+                <span>V Pramanik, M Maliha, SK Jha</span>
+                <span>NAECON 2024, pp. 190–193</span>
+                <span>2024</span>
+            </div>
+        </article>
+
+        <!-- ⭐ 2023 -->
+        <div class="pub-year-heading">2023</div>
+
+        <article class="publication">
+            <h2 class="pub-title">
+                <a href="https://annals-csis.org/Volume_35/drp/9832.html" target="_blank">
+                    A Survey on Congestion Control and Scheduling for Multipath TCP: Machine Learning vs Classical Approaches ↗
+                </a>
+            </h2>
+            <div class="pub-meta">
+                <span>M Maliha, G Habibi, M Atiquzzaman</span>
+                <span>FedCSIS 2023</span>
+                <span>2023</span>
+            </div>
+        </article>
+
+        <article class="publication">
+            <h2 class="pub-title">
+                <a href="https://www.researchgate.net/publication/375883431_Vehicle_Detection_and_Identification_System_Convolutional_Neural_Network_with_Self-Attention" target="_blank">
+                    Vehicle Detection and Identification System: CNN with Self-Attention ↗
+                </a>
+            </h2>
+            <div class="pub-meta">
+                <span>M Maliha, V Pramanik</span>
+                <span>ICCCNT 2023</span>
+                <span>2023</span>
+            </div>
+        </article>
+
+        <article class="publication">
+            <h2 class="pub-title">
+                <a href="https://scale.stanford.edu/ai/repository/hey-ai-can-you-grade-my-essay-automatic-essay-grading" target="_blank">
+                    Hey AI Can You Grade My Essay?: Automatic Essay Grading ↗
+                </a>
+            </h2>
+            <div class="pub-meta">
+                <span>M Maliha, V Pramanik</span>
+                <span>ICAAAIML 2023</span>
+                <span>2023</span>
+            </div>
+        </article>
+
+        <!-- ⭐ 2022 -->
+        <div class="pub-year-heading">2022</div>
+
+        <article class="publication">
+            <h2 class="pub-title">
+                <a href="https://www.researchgate.net/publication/368405182_Analyzing_Sentiment_Towards_a_Product_using_DistilBERT_and_LSTM" target="_blank">
+                    Analyzing Sentiment Towards a Product using DistilBERT and LSTM ↗
+                </a>
+            </h2>
+            <div class="pub-meta">
+                <span>V Pramanik, M Maliha</span>
+                <span>ICCCIS 2022</span>
+                <span>2022</span>
+            </div>
+        </article>
+
+        <!-- ⭐ 2021 -->
+        <div class="pub-year-heading">2021</div>
+
+        <article class="publication">
+            <h2 class="pub-title">
+                <a href="https://doi.org/10.1109/ICTP53732.2021.9744169" target="_blank">
+                    A Supervised Learning Approach: Detection of Cyber Attacks ↗
+                </a>
+            </h2>
+            <div class="pub-meta">
+                <span>M Maliha</span>
+                <span>ICTP 2021</span>
+                <span>2021</span>
+            </div>
+        </article>
+
+        <!-- ⭐ 2019 -->
+        <div class="pub-year-heading">2019</div>
+
+        <article class="publication">
+            <h2 class="pub-title">
+                <a href="https://www.researchgate.net/publication/339980709_Sentiment_Analysis_with_NLP_on_Twitter_Data" target="_blank">
+                    Sentiment Analysis with NLP on Twitter Data ↗
+                </a>
+            </h2>
+            <div class="pub-meta">
+                <span>MR Hasan, M Maliha, M Arifuzzaman</span>
+                <span>IC4ME2 2019</span>
+                <span>2019</span>
             </div>
         </article>
 
