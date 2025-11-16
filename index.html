@@ -14,7 +14,7 @@
   <style>
     /* Clean background color (pastel blue) */
     body {
-      background: #eaf3ff;   /* <-- NEW BACKGROUND COLOR */
+      background: #eaf3ff;   /* NEW BACKGROUND COLOR */
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
@@ -70,17 +70,20 @@
   </style>
 </head>
 <body>
+
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="#">Maisha Maliha</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse"
+              data-target="#navbarNav" aria-controls="navbarNav"
+              aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Academics</a></li>
           <li class="nav-item"><a class="nav-link" href="research.html">Research</a></li>
           <li class="nav-item"><a class="nav-link" href="gamelessons.html">Game-Code</a></li>
@@ -97,13 +100,15 @@
   <section class="hero-section">
     <div class="container">
       <div class="row align-items-center">
+
         <div class="col-md-4 mb-3 mb-md-0 text-center">
           <img src="citations.jpeg" alt="Profile / Research" class="img-fluid rounded shadow-lg">
         </div>
+
         <div class="col-md-8 text-md-left text-center">
           <div class="hero-name">Maisha Maliha</div>
           <div class="hero-subtitle">
-            Ph.D. Candidate in Computer Science, University of Oklahoma· Explainable AI · Reinforcement Learning · Cybersecurity
+            Ph.D. Candidate in Computer Science · Explainable AI · Reinforcement Learning · Cybersecurity
           </div>
           <div class="mt-3">
             <span class="tag-pill">Teaching: CS1213 Programming with Python</span>
@@ -116,6 +121,7 @@
             <a href="mailto:your_email@ou.edu" class="btn btn-light btn-sm">Contact</a>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -137,8 +143,7 @@
           </p>
           <p class="mb-1">
             Previously, I worked as a <strong>lab instructor</strong> for the same course in
-            <strong>Fall 2024</strong> and <strong>Spring 2025</strong>, where I led weekly lab sessions,
-            supported students with hands-on Python practice, and helped build their confidence in core programming concepts.
+            <strong>Fall 2024</strong> and <strong>Spring 2025</strong>.
           </p>
         </div>
       </div>
@@ -147,13 +152,8 @@
         <div class="card-body">
           <h5 class="card-title mb-2">Horizon Mini-College: Computer Science Teaching</h5>
           <p class="mb-1">
-            I have also taught <strong>computer science</strong> as part of OU’s
-            <strong>Horizon Mini-College</strong> program, designing and delivering age-appropriate
-            lessons in computing for students from <strong>1st through 8th grade</strong>.
-          </p>
-          <p class="mb-0">
-            Through this outreach, I aim to make programming approachable and enjoyable for younger students,
-            inspiring their curiosity for problem solving and computational thinking.
+            I have also taught <strong>computer science</strong> through OU’s Horizon Mini-College program,
+            designing and delivering computing lessons for <strong>1st–8th grade</strong> students.
           </p>
         </div>
       </div>
@@ -164,6 +164,8 @@
       <h2 class="section-title">Research &amp; Accomplishments</h2>
 
       <div class="row">
+
+        <!-- UPDATED RESEARCH FOCUS CARD -->
         <div class="col-md-6 mb-3">
           <div class="card card-shadow h-100">
             <div class="card-body">
@@ -174,14 +176,23 @@
                 I work on designing methods that make learning systems more transparent,
                 trustworthy, and robust in safety-critical environments.
               </p>
-              <p class="card-text mb-0">
+
+              <p class="card-text mb-3">
                 I am particularly interested in <strong>mask-based explanations</strong>,
                 <strong>multi-agent collaboration</strong>, and <strong>RL-driven intrusion detection</strong>.
               </p>
+
+              <!-- ⭐ Added INSIDE the Research Focus section ⭐ -->
+              <p class="card-text mb-0">
+                To explore my full list of publications, please visit the
+                <a href="research.html"><strong>Research</strong> section</a>.
+              </p>
+
             </div>
           </div>
         </div>
 
+        <!-- Highlights -->
         <div class="col-md-6 mb-3">
           <div class="card card-shadow h-100">
             <div class="card-body">
@@ -190,30 +201,23 @@
                 <li class="mb-1">
                   <span class="badge badge-dark badge-year">2025</span>
                   <strong>NeurIPS 2025 Workshop (FoRLM)</strong> submission:
-                  <em>“Hessian-Enhanced Token Attribution (HETA): Interpreting Autoregressive Language Models”</em>.
+                  <em>Hessian-Enhanced Token Attribution (HETA)</em>.
                 </li>
                 <li class="mb-1">
                   <span class="badge badge-dark badge-year">2025</span>
-                  Research on <strong>MAGIC-MASK</strong>,
-                  a framework for multi-agent collaboration with mask-based explainability.
+                  Research on <strong>MAGIC-MASK</strong> for multi-agent explainability.
                 </li>
                 <li class="mb-1">
                   <span class="badge badge-dark badge-year">2024</span>
-                  <strong>First and Second Place awards</strong> at
-                  <strong>NAECON 2024</strong> for research on aviation analytics and explainable AI.
+                  <strong>First &amp; Second Place Awards</strong> at NAECON 2024.
                 </li>
               </ul>
             </div>
           </div>
         </div>
+
       </div>
 
-      <div class="mt-3">
-        <p class="mb-2">
-          To explore my full list of publications, please visit the
-          <a href="research.html"><strong>Research</strong> section</a>.
-        </p>
-      </div>
     </section>
 
   </main>
@@ -226,5 +230,6 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
 </html>
