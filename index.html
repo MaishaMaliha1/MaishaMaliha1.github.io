@@ -5,33 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Maisha Maliha</title>
 
-  <!-- Bootstrap CSS CDN -->
+  <!-- Bootstrap CSS -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Custom CSS (Optional) -->
-  <link rel="stylesheet" href="style.css">
-
   <style>
-    /* Simple tweaks to make it less boring without changing your structure too much */
+    /* ---------- GLOBAL COLORS ---------- */
     body {
-      background: #f5f5f7;
+      background: #f3f4f7;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #1f2937;
     }
 
+    .navbar-dark {
+      background: #111827 !important;
+    }
+
+    /* ---------- HERO SECTION ---------- */
     .hero-section {
-      background: linear-gradient(135deg, #1b2735, #283e51);
+      background: linear-gradient(135deg, #0f172a, #1e293b, #334155);
       color: #ffffff;
-      padding: 3rem 0 3.5rem;
-      border-bottom: 4px solid #111827;
+      padding: 3.2rem 0 3.5rem;
+      border-bottom: 4px solid #0f172a;
     }
 
     .hero-name {
-      font-size: 2.2rem;
+      font-size: 2.4rem;
       font-weight: 700;
+      color: #fff;
     }
 
     .hero-subtitle {
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       margin-top: 0.5rem;
       opacity: 0.9;
     }
@@ -40,41 +44,87 @@
       display: inline-block;
       padding: 0.25rem 0.75rem;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.25);
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.3);
       font-size: 0.8rem;
-      margin: 0.2rem 0.2rem 0 0;
+      color: #e0e7ff;
+      margin: 0.25rem 0.35rem 0 0;
     }
 
+    .btn-outline-light {
+      border-color: #cbd5e1;
+      color: #e2e8f0;
+    }
+    .btn-outline-light:hover {
+      background: #cbd5e1;
+      color: #1e293b;
+    }
+
+    .btn-light {
+      background: #e2e8f0;
+      color: #1e293b;
+    }
+    .btn-light:hover {
+      background: #f8fafc;
+    }
+
+    /* ---------- SECTION TITLES ---------- */
     .section-title {
-      font-weight: 600;
-      border-left: 4px solid #343a40;
-      padding-left: 0.6rem;
-      margin-bottom: 1rem;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #1e293b;
+      border-left: 6px solid #4f46e5;
+      padding-left: 0.75rem;
+      margin-bottom: 1.2rem;
     }
 
+    /* ---------- CARD STYLING ---------- */
     .card-shadow {
       border: none;
-      border-radius: 0.75rem;
-      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
+      border-radius: 0.85rem;
+      background: #ffffff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
 
-    .badge-year {
-      font-size: 0.8rem;
+    .card-shadow:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
+    }
+
+    .card-title {
+      color: #334155;
       font-weight: 600;
     }
 
+    .card-text {
+      color: #475569;
+    }
+
+    /* ---------- BADGES ---------- */
+    .badge-year {
+      background: #4f46e5;
+      color: #fff;
+      padding: 0.25rem 0.55rem;
+      border-radius: 6px;
+    }
+
+    /* ---------- FOOTER ---------- */
     footer {
-      margin-top: 3rem;
+      background: #111827;
+      color: #e5e7eb;
     }
   </style>
 </head>
+
 <body>
+  <!-- NAVBAR -->
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="#">Maisha Maliha</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse"
+              data-target="#navbarNav" aria-controls="navbarNav"
+              aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
@@ -88,35 +138,40 @@
           <li class="nav-item"><a class="nav-link" href="m.html">Game</a></li>
           <li class="nav-item"><a class="nav-link" href="a.html">Logos</a></li>
           <li class="nav-item"><a class="nav-link" href="#">People</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Connect</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Connect &amp; Give</a></li>
         </ul>
       </div>
     </nav>
   </header>
 
-  <!-- HERO SECTION -->
+  <!-- HERO -->
   <section class="hero-section">
     <div class="container">
       <div class="row align-items-center">
-        <div class="col-md-4 mb-3 mb-md-0 text-center">
-          <img src="citations.jpeg" alt="Profile / Research" class="img-fluid rounded shadow-lg">
+
+        <div class="col-md-4 mb-3 text-center">
+          <img src="citations.jpeg" alt="Profile" class="img-fluid rounded shadow-lg">
         </div>
-        <div class="col-md-8 text-md-left text-center">
+
+        <div class="col-md-8 text-center text-md-left">
           <div class="hero-name">Maisha Maliha</div>
           <div class="hero-subtitle">
             Ph.D. Candidate in Computer Science · Explainable AI · Reinforcement Learning · Cybersecurity
           </div>
+
           <div class="mt-3">
-            <span class="tag-pill">Teaching: CS1213 Programming with Python</span>
-            <span class="tag-pill">Explainable AI (XAI)</span>
+            <span class="tag-pill">CS1213 Instructor (Python)</span>
+            <span class="tag-pill">Explainable AI</span>
             <span class="tag-pill">Multi-Agent RL</span>
-            <span class="tag-pill">Network Security</span>
+            <span class="tag-pill">Cybersecurity</span>
           </div>
+
           <div class="mt-4">
             <a href="research.html" class="btn btn-outline-light btn-sm mr-2">View Research</a>
             <a href="mailto:your_email@ou.edu" class="btn btn-light btn-sm">Contact</a>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -124,60 +179,46 @@
   <!-- MAIN CONTENT -->
   <main class="container mt-4">
 
-    <!-- Teaching Section -->
-    <section id="teaching" class="mb-4">
+    <!-- TEACHING -->
+    <section id="teaching" class="mb-5">
       <h2 class="section-title">Teaching</h2>
 
       <div class="card card-shadow mb-3">
         <div class="card-body">
-          <h5 class="card-title mb-2">CS1213: Programming with Python</h5>
-          <p class="mb-1">
-            I am currently serving as the <strong>primary instructor</strong> for
-            <strong>CS1213: Programming with Python</strong> at the
-            <strong>University of Oklahoma</strong> in <strong>Fall 2025</strong>.
-          </p>
-          <p class="mb-1">
-            Previously, I worked as a <strong>lab instructor</strong> for the same course in
-            <strong>Fall 2024</strong> and <strong>Spring 2025</strong>, where I led weekly lab sessions,
-            supported students with hands-on Python practice, and helped build their confidence in core programming concepts.
+          <h5 class="card-title">CS1213: Programming with Python</h5>
+          <p>
+            I currently serve as the <strong>primary instructor</strong> for
+            CS1213: Programming with Python at the University of Oklahoma (Fall 2025).
+            I previously taught as a <strong>lab instructor</strong> in Fall 2024 and Spring 2025.
           </p>
         </div>
       </div>
 
       <div class="card card-shadow">
         <div class="card-body">
-          <h5 class="card-title mb-2">Horizon Mini-College: Computer Science Teaching</h5>
-          <p class="mb-1">
-            I have also taught <strong>computer science</strong> as part of OU’s
-            <strong>Horizon Mini-College</strong> program, designing and delivering age-appropriate
-            lessons in computing for students from <strong>1st through 8th grade</strong>.
-          </p>
-          <p class="mb-0">
-            Through this outreach, I aim to make programming approachable and enjoyable for younger students,
-            inspiring their curiosity for problem solving and computational thinking.
+          <h5 class="card-title">Horizon Mini-College (Grades 1–8)</h5>
+          <p>
+            I taught computing fundamentals through OU’s Horizon Mini-College program,
+            designing engaging computer science lessons for students from <strong>1st to 8th grade</strong>.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- Research & Achievements Section -->
-    <section id="research" class="mb-4">
-      <h2 class="section-title">Research &amp; Accomplishments</h2>
+    <!-- RESEARCH -->
+    <section id="research" class="mb-5">
+      <h2 class="section-title">Research &amp; Achievements</h2>
 
       <div class="row">
         <div class="col-md-6 mb-3">
           <div class="card card-shadow h-100">
             <div class="card-body">
               <h5 class="card-title">Research Focus</h5>
-              <p class="card-text mb-2">
-                My research lies at the intersection of <strong>Explainable AI</strong>,
-                <strong>Reinforcement Learning</strong>, and <strong>Cybersecurity</strong>.
-                I work on designing methods that make learning systems more transparent,
-                trustworthy, and robust in safety-critical environments.
-              </p>
-              <p class="card-text mb-0">
-                I am particularly interested in <strong>mask-based explanations</strong>,
-                <strong>multi-agent collaboration</strong>, and <strong>RL-driven intrusion detection</strong>.
+              <p class="card-text">
+                My research spans <strong>Explainable AI (XAI)</strong>, 
+                <strong>multi-agent reinforcement learning</strong>, 
+                and <strong>cybersecurity</strong>, with a focus on 
+                transparency, trust, and safety.
               </p>
             </div>
           </div>
@@ -186,24 +227,20 @@
         <div class="col-md-6 mb-3">
           <div class="card card-shadow h-100">
             <div class="card-body">
-              <h5 class="card-title">Recent Highlights</h5>
-              <ul class="mb-0">
-                <li class="mb-1">
-                  <span class="badge badge-dark badge-year">2025</span>
-                  <strong>NeurIPS 2025 Workshop (FoRLM)</strong> submission:
-                  <em>“Hessian-Enhanced Token Attribution (HETA): Interpreting Autoregressive Language Models”</em>,
-                  co-authored with <strong>Vishal Pramanik</strong> and <strong>Sumit Kumar Jha</strong>.
+              <h5 class="card-title">Achievements</h5>
+              <ul>
+                <li>
+                  <span class="badge-year">2025</span>  
+                  NeurIPS 2025 FoRLM Workshop submission:  
+                  <em>Hessian-Enhanced Token Attribution (HETA)</em>
                 </li>
-                <li class="mb-1">
-                  <span class="badge badge-dark badge-year">2025</span>
-                  Research on <strong>MAGIC-MASK</strong>, a framework for multi-agent collaboration with mask-based
-                  explainability in reinforcement learning.
+                <li>
+                  <span class="badge-year">2024</span>  
+                  First &amp; Second Place Awards — NAECON 2024
                 </li>
-                <li class="mb-1">
-                  <span class="badge badge-dark badge-year">2024</span>
-                  <strong>First and Second Place awards</strong> at
-                  <strong>NAECON 2024</strong> for poster presentations on
-                  aviation analytics and explainable AI.
+                <li>
+                  <span class="badge-year">2025</span>  
+                  MAGIC-MASK multi-agent explainability framework
                 </li>
               </ul>
             </div>
@@ -211,22 +248,20 @@
         </div>
       </div>
 
-      <div class="mt-3">
-        <p class="mb-2">
-          To explore my full list of publications, including work on sentiment analysis, networking,
-          reinforcement learning, and explainable AI, please visit the
-          <a href="research.html"><strong>Research</strong> section</a>.
-        </p>
-      </div>
+      <p class="mt-3">
+        See the full list of publications in the  
+        <a href="research.html"><strong>Research</strong> section</a>.
+      </p>
     </section>
 
   </main>
 
+  <!-- FOOTER -->
   <footer class="bg-dark text-white text-center py-3">
     <p class="mb-0">© Developed by Maisha Maliha</p>
   </footer>
 
-  <!-- Bootstrap JS and jQuery CDN -->
+  <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
